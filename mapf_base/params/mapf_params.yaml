@@ -3,6 +3,7 @@ mapf:
     ros__parameters:
       use_sim_time: True
 
+
 mapf:
   mapf_base_node:
     ros__parameters:
@@ -32,6 +33,12 @@ mapf:
       plan_topic:
         agent_0: rb_0/plan
         agent_1: rb_1/plan
+
+        whca:
+        
+          window_size: 8
+          max_replans: 500
+          priority_strategy: 0
 
 
 mapf:

@@ -38,6 +38,7 @@
     <mapf_ros plugin="${prefix}/cbs_planner_plugins.xml" />
     <mapf_ros plugin="${prefix}/ecbs_planner_plugins.xml" />
     <mapf_ros plugin="${prefix}/sipp_planner_plugins.xml" />
+    <mapf_ros plugin="${prefix}/whca_planner_plugins.xml" />
   </export>
 
 </package>

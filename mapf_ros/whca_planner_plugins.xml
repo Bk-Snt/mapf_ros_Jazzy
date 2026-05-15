@@ -1,0 +1,9 @@
+<library path="whca_planner">
+  <class name="mapf_planner/WHCAROS" type="mapf::WHCAROS" base_class_type="mapf::MAPFROS">
+    <description>
+      Windowed Hierarchical Cooperative A* (Silver 2005) multi-agent planner.
+      Uses a space-time reservation table with a windowed search horizon W
+      and a Reverse Resumable A* (RRA*) heuristic per agent.
+    </description>
+  </class>
+</library>
