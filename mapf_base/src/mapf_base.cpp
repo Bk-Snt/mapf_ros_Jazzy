@@ -40,7 +40,7 @@ MAPFBase::MAPFBase(const rclcpp::NodeOptions &options)
   getParam();
 
   costmap_ros_ = std::make_shared<nav2_costmap_2d::Costmap2DROS>(
-      "mapf_costmap", std::string{get_namespace()}, "mapf_costmap");
+      "mapf_costmap", std::string{get_namespace()}, "mapf_costmap", get_parameter("use_sim_time").as_bool());
 }
 
 MAPFBase::~MAPFBase() {

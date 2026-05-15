@@ -37,8 +37,8 @@
 #include "std_srvs/srv/empty.hpp"
 #include "std_srvs/srv/set_bool.hpp"
 
-#include "tf2/utils.h"
-#include "tf2_ros/transform_listener.h"
+#include "tf2/utils.hpp"
+#include "tf2_ros/transform_listener.hpp"
 
 #include "mapf_msgs/msg/global_plan.hpp"
 #include "mapf_msgs/msg/goal.hpp"
