@@ -1,0 +1,220 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x0000708f5dd4ba5f, pid=1636, tid=1655
+#
+# JRE version: OpenJDK Runtime Environment (21.0.10+7) (build 21.0.10+7-Ubuntu-124.04)
+# Java VM: OpenJDK 64-Bit Server VM (21.0.10+7-Ubuntu-124.04, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# V  [libjvm.so+0x74ba5f]  Dictionary::find(Thread*, Symbol*, Handle)+0xcf
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/wsl-capture-crash %t %E %p %s" (or dumping to /home/azawe/mapf_ws/core.1636)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-21
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/azawe/.vscode-server/data/User/globalStorage/redhat.vscode-xml -Xmx64M org.eclipse.lemminx.XMLServerLauncher
+
+Host: Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz, 4 cores, 7G, Ubuntu 24.04.4 LTS
+Time: Tue May 19 15:15:09 2026 AEST elapsed time: 11088.713749 seconds (0d 3h 4m 48s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000708f5823dd10):  JavaThread "pool-5-thread-1"        [_thread_in_vm, id=1655, stack(0x0000708f31c00000,0x0000708f31d00000) (1024K)]
+
+Stack: [0x0000708f31c00000,0x0000708f31d00000],  sp=0x0000708f31cfacc0,  free space=1003k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x74ba5f]  Dictionary::find(Thread*, Symbol*, Handle)+0xcf
+V  [libjvm.so+0xf4e287]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, JavaThread*)+0x167
+V  [libjvm.so+0xe8bab9]  SignatureStream::as_klass(Handle, Handle, SignatureStream::FailureMode, JavaThread*)+0x119
+V  [libjvm.so+0xc89665]  Method::load_signature_classes(methodHandle const&, JavaThread*)+0xd5
+V  [libjvm.so+0x671d26]  CompileBroker::compile_method(methodHandle const&, int, int, methodHandle const&, int, CompileTask::CompileReason, DirectiveSet*, JavaThread*)+0x296
+V  [libjvm.so+0x671f3b]  CompileBroker::compile_method(methodHandle const&, int, int, methodHandle const&, int, CompileTask::CompileReason, JavaThread*)+0x7b
+V  [libjvm.so+0x65529b]  CompilationPolicy::compile(methodHandle const&, int, CompLevel, JavaThread*)+0x1db
+V  [libjvm.so+0x656c08]  CompilationPolicy::event(methodHandle const&, methodHandle const&, int, int, CompLevel, CompiledMethod*, JavaThread*)+0x228
+V  [libjvm.so+0x5668b5]  Runtime1::counter_overflow(JavaThread*, int, Method*)+0x195
+v  ~RuntimeStub::counter_overflow Runtime1 stub 0x0000708f47e49a65
+J 81 c1 java.lang.ref.NativeReferenceQueue.poll()Ljava/lang/ref/Reference; java.base@21.0.10 (28 bytes) @ 0x0000708f40814e2a [0x0000708f40814be0+0x000000000000024a]
+J 670 c1 jdk.internal.util.ReferencedKeyMap.existingKey(Ljdk/internal/util/ReferencedKeyMap;Ljava/lang/Object;)Ljava/lang/Object; java.base@21.0.10 (32 bytes) @ 0x0000708f409098e4 [0x0000708f409092c0+0x0000000000000624]
+J 200 c1 java.lang.invoke.MethodType.makeImpl(Ljava/lang/Class;[Ljava/lang/Class;Z)Ljava/lang/invoke/MethodType; java.base@21.0.10 (109 bytes) @ 0x0000708f4083ebf4 [0x0000708f4083dde0+0x0000000000000e14]
+J 362 c1 java.lang.invoke.MethodType.methodType(Ljava/lang/Class;[Ljava/lang/Class;Z)Ljava/lang/invoke/MethodType; java.base@21.0.10 (69 bytes) @ 0x0000708f40881624 [0x0000708f408813a0+0x0000000000000284]
+J 1663 c1 java.lang.invoke.MethodHandleNatives.findMethodHandleType(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType; java.base@21.0.10 (7 bytes) @ 0x0000708f40b0db24 [0x0000708f40b0dac0+0x0000000000000064]
+v  ~StubRoutines::call_stub 0x0000708f47d37cc6
+V  [libjvm.so+0x9140ba]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, JavaThread*)+0x2da
+V  [libjvm.so+0x914513]  JavaCalls::call_static(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, JavaThread*)+0x113
+V  [libjvm.so+0xf4b41c]  SystemDictionary::find_method_handle_type(Symbol*, Klass*, JavaThread*)+0x87c
+V  [libjvm.so+0xf4c769]  SystemDictionary::find_method_handle_invoker(Klass*, Symbol*, Symbol*, Klass*, Handle*, JavaThread*)+0x39
+V  [libjvm.so+0xb8a707]  LinkResolver::lookup_polymorphic_method(LinkInfo const&, Handle*, JavaThread*)+0x257
+V  [libjvm.so+0xb8b156]  LinkResolver::resolve_handle_call(CallInfo&, LinkInfo const&, JavaThread*)+0x36
+V  [libjvm.so+0xb8b4a6]  LinkResolver::resolve_invokehandle(CallInfo&, constantPoolHandle const&, int, JavaThread*)+0x1c6
+V  [libjvm.so+0x90ae74]  InterpreterRuntime::resolve_invokehandle(JavaThread*)+0x144
+V  [libjvm.so+0x90c415]  InterpreterRuntime::resolve_from_cache(JavaThread*, Bytecodes::Code)+0x105
+j  java.util.concurrent.FutureTask.set(Ljava/lang/Object;)V+6 java.base@21.0.10
+j  java.util.concurrent.FutureTask.run()V+68 java.base@21.0.10
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@21.0.10
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@21.0.10
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@21.0.10
+j  java.lang.Thread.run()V+19 java.base@21.0.10
+v  ~StubRoutines::call_stub 0x0000708f47d37cc6
+V  [libjvm.so+0x9140ba]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, JavaThread*)+0x2da
+V  [libjvm.so+0x9158a2]  JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, JavaThread*)+0x1a2
+V  [libjvm.so+0x9f0bc3]  thread_entry(JavaThread*, JavaThread*)+0x93
+V  [libjvm.so+0x92c066]  JavaThread::thread_main_inner()+0x1e6
+V  [libjvm.so+0xf8fef7]  Thread::call_run()+0xa7
+V  [libjvm.so+0xd06565]  thread_native_entry(Thread*)+0xd5
+C  [libc.so.6+0x9caa4]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::counter_overflow Runtime1 stub 0x0000708f47e49a65
+J 81 c1 java.lang.ref.NativeReferenceQueue.poll()Ljava/lang/ref/Reference; java.base@21.0.10 (28 bytes) @ 0x0000708f40814e2a [0x0000708f40814be0+0x000000000000024a]
+J 670 c1 jdk.internal.util.ReferencedKeyMap.existingKey(Ljdk/internal/util/ReferencedKeyMap;Ljava/lang/Object;)Ljava/lang/Object; java.base@21.0.10 (32 bytes) @ 0x0000708f409098e4 [0x0000708f409092c0+0x0000000000000624]
+J 200 c1 java.lang.invoke.MethodType.makeImpl(Ljava/lang/Class;[Ljava/lang/Class;Z)Ljava/lang/invoke/MethodType; java.base@21.0.10 (109 bytes) @ 0x0000708f4083ebf4 [0x0000708f4083dde0+0x0000000000000e14]
+J 362 c1 java.lang.invoke.MethodType.methodType(Ljava/lang/Class;[Ljava/lang/Class;Z)Ljava/lang/invoke/MethodType; java.base@21.0.10 (69 bytes) @ 0x0000708f40881624 [0x0000708f408813a0+0x0000000000000284]
+J 1663 c1 java.lang.invoke.MethodHandleNatives.findMethodHandleType(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType; java.base@21.0.10 (7 bytes) @ 0x0000708f40b0db24 [0x0000708f40b0dac0+0x0000000000000064]
+v  ~StubRoutines::call_stub 0x0000708f47d37cc6
+j  java.util.concurrent.FutureTask.set(Ljava/lang/Object;)V+6 java.base@21.0.10
+j  java.util.concurrent.FutureTask.run()V+68 java.base@21.0.10
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@21.0.10
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@21.0.10
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@21.0.10
+j  java.lang.Thread.run()V+19 java.base@21.0.10
+v  ~StubRoutines::call_stub 0x0000708f47d37cc6
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x0000708ee406e648
+
+Registers:
+RAX=0x0000708ea80415a0, RBX=0x0000708ea8041580, RCX=0x0000000000000000, RDX=0x0000708ee406e630
+RSP=0x0000708f31cfacc0, RBP=0x0000708f31cface0, RSI=0x0000708ee3481628, RDI=0x0000708f5823dd10
+R8 =0x0000708f580911b0, R9 =0x0000000000000000, R10=0x0000708f31cfb0a0, R11=0x00007ffe487d8080
+R12=0x0000000000000000, R13=0x0000708ee3481628, R14=0x0000708f58090c80, R15=0x0000000000000000
+RIP=0x0000708f5dd4ba5f, EFLAGS=0x0000000000010212, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+XMM[0]=0x0000000000000000 0x0000000000000000
+XMM[1]=0x0000000000000000 0x0000000000000000
+XMM[2]=0xffffffffffffffff 0xffffffffffffffff
+XMM[3]=0x0000000000000000 0x40c6808000000000
+XMM[4]=0x0000000000000000 0x0000708f40814e2a
+XMM[5]=0x0000000000000000 0x0000708f5823dd10
+XMM[6]=0x0000000000000000 0x0000708f5823dd10
+XMM[7]=0x73696c6275702f74 0x6e656d75636f4474
+XMM[8]=0x06548ef35033c531 0xc36c9e3349abdba9
+XMM[9]=0xbce6f894bce6f894 0xbce6f894578f56fd
+XMM[10]=0x0000000000000000 0x000000009aa85e69
+XMM[11]=0x63d61a0f63d61a0f 0x63d61a0fbb65710c
+XMM[12]=0x0000000000000000 0x00000000578f56fd
+XMM[13]=0x0000000000000000 0x0000000000000000
+XMM[14]=0x0000000000000000 0x0000000000000000
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa2
+
+
+Register to memory mapping:
+
+RAX=0x0000708ea80415a0 points into unknown readable memory: 0x0000708f580a6f60 | 60 6f 0a 58 8f 70 00 00
+RBX=0x0000708ea8041580 points into unknown readable memory: 0x0000708ee406e630 | 30 e6 06 e4 8e 70 00 00
+RCX=0x0 is null
+RDX=0x0000708ee406e630 is pointing into metadata
+RSP=0x0000708f31cfacc0 is pointing into the stack for thread: 0x0000708f5823dd10
+RBP=0x0000708f31cface0 is pointing into the stack for thread: 0x0000708f5823dd10
+RSI=0x0000708ee3481628 is pointing into metadata
+RDI=0x0000708f5823dd10 is a thread
+R8 =0x0000708f580911b0 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+R9 =0x0 is null
+R10=0x0000708f31cfb0a0 is pointing into the stack for thread: 0x0000708f5823dd10
+R11=0x00007ffe487d8080 points into unknown readable memory: 0x00000003003da0ba | ba a0 3d 00 03 00 00 00
+R12=0x0 is null
+R13=0x0000708ee3481628 is pointing into metadata
+R14=0x0000708f58090c80 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+R15=0x0 is null
+
+Top of Stack: (sp=0x0000708f31cfacc0)
+0x0000708f31cfacc0:   0000708f31cfdef0 0000708f5823dd10
+0x0000708f31cfacd0:   0000000000000000 0000708ee3481628
+0x0000708f31cface0:   0000708f31cfaeb0 0000708f5e54e287
+0x0000708f31cfacf0:   0000708f31cfde98 0000708f31cfde9c
+0x0000708f31cfad00:   0000708f31cfde90 0000708f31cfde94
+0x0000708f31cfad10:   0000708f31cfde88 0000708f31cfde8c
+0x0000708f31cfad20:   0000708f31cfde80 0000708f31cfde84
+0x0000708f31cfad30:   0000708f58001400 0000708f31cfde7c
+0x0000708f31cfad40:   0000708f31cfada0 0000000000000000
+0x0000708f31cfad50:   0000708f31cfde68 0000708f31cfde6c
+0x0000708f31cfad60:   0000708f31cfde60 0000708f31cfde64
+0x0000708f31cfad70:   0000000000000000 0000000000000000
+0x0000708f31cfad80:   0000708f40000000 0000708f40bb8220
+0x0000708f31cfad90:   0000708f31cfad80 0000708f5db692db
+0x0000708f31cfada0:   0000708f5823dd10 0000708f5823e460
+0x0000708f31cfadb0:   0000708f5823e4a0 0000708f5823e4d0
+0x0000708f31cfadc0:   0000708f5823e588 00000000000000d8
+0x0000708f31cfadd0:   0000708f31cfe010 0000000000000000
+0x0000708f31cfade0:   0000700000000000 0000708f31cfe178
+0x0000708f31cfadf0:   0000708f31cfd480 0000708f31cfd484
+0x0000708f31cfae00:   0000708ee3021b20 0000708ee3024530
+0x0000708f31cfae10:   0000708f31cf8b00 0000708f5e53ae2d
+0x0000708f31cfae20:   0000708f31cf89e0 0000000000000017
+0x0000708f31cfae30:   0000708ee3c75598 0000708ee349f609
+0x0000708f31cfae40:   0000708ee3021b20 00000000bc3d9f5b
+0x0000708f31cfae50:   0000000000000017 0000708ee349f609
+0x0000708f31cfae60:   0000708ea8000d10 00000000bc3d9f5b
+0x0000708f31cfae70:   0000708f31cfaeb0 0000708f5e53e0e1
+0x0000708f31cfae80:   0000708ee3024530 0000708f31cfaf50
+0x0000708f31cfae90:   0000000000000000 0000708f5823dd10
+0x0000708f31cfaea0:   0000000000000000 0000000000000000
+0x0000708f31cfaeb0:   0000708f31cfaf10 0000708f5e48bab9 
+
+Instructions: (pc=0x0000708f5dd4ba5f)
+0x0000708f5dd4b95f:   18 48 8b 42 08 48 8b 08 48 3b 71 18 75 eb 4c 89
+0x0000708f5dd4b96f:   87 a8 01 00 00 c3 0f 1f 00 31 c0 4c 89 87 a8 01
+0x0000708f5dd4b97f:   00 00 c3 66 66 2e 0f 1f 84 00 00 00 00 00 0f 1f
+0x0000708f5dd4b98f:   00 f3 0f 1e fa 55 48 89 f8 48 89 f7 48 89 d6 48
+0x0000708f5dd4b99f:   89 e5 41 55 41 54 49 89 cc 53 48 83 ec 08 48 8b
+0x0000708f5dd4b9af:   8f a8 01 00 00 4c 8b 40 08 48 89 c8 f6 c1 01 75
+0x0000708f5dd4b9bf:   12 48 8d 05 59 04 dc 00 48 8b 80 80 00 00 00 48
+0x0000708f5dd4b9cf:   83 c8 01 48 8d 97 a8 01 00 00 48 87 02 49 8b 40
+0x0000708f5dd4b9df:   50 48 85 c0 74 09 49 8d 50 50 31 c0 48 87 02 0f
+0x0000708f5dd4b9ef:   b7 56 04 49 89 f1 8b 06 49 c1 e9 03 c1 e2 08 44
+0x0000708f5dd4b9ff:   31 ca 44 0f b7 4e 06 66 41 c1 c1 08 44 31 ca 0f
+0x0000708f5dd4ba0f:   ac d0 10 49 8b 50 10 89 c0 4c 8b 4a 18 48 8b 12
+0x0000708f5dd4ba1f:   49 21 c1 4a 8d 14 ca 4c 8b 0a 41 83 e1 02 74 0f
+0x0000708f5dd4ba2f:   49 8b 50 18 48 23 42 18 48 8b 12 48 8d 14 c2 48
+0x0000708f5dd4ba3f:   8b 12 48 89 d0 48 83 e0 fc 48 83 fa 03 77 0a eb
+0x0000708f5dd4ba4f:   48 48 8b 00 48 85 c0 74 40 48 8b 58 08 48 8b 13
+0x0000708f5dd4ba5f:   48 3b 72 18 75 eb 48 89 8f a8 01 00 00 48 85 db
+0x0000708f5dd4ba6f:   74 2e 4d 85 e4 74 10 49 83 3c 24 00 74 09 e8 4e
+0x0000708f5dd4ba7f:   4a 1d 00 84 c0 75 2a 48 8b 03 48 83 c4 08 5b 41
+0x0000708f5dd4ba8f:   5c 41 5d 5d c3 0f 1f 40 00 48 89 8f a8 01 00 00
+0x0000708f5dd4ba9f:   48 83 c4 08 31 c0 5b 41 5c 41 5d 5d c3 0f 1f 40
+0x0000708f5dd4baaf:   00 48 8b 3b 4d 8b 2c 24 48 8b 07 ff 90 e8 00 00
+0x0000708f5dd4babf:   00 49 39 c5 74 c1 4c 8b 63 08 4d 85 e4 75 0c eb
+0x0000708f5dd4bacf:   cf 4d 8b 64 24 08 4d 85 e4 74 c5 4c 89 e7 e8 fe
+0x0000708f5dd4badf:   7e 61 00 49 39 c5 75 e9 eb 9d 90 66 0f 1f 44 00
+0x0000708f5dd4baef:   00 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 4c 8b
+0x0000708f5dd4baff:   87 a8 01 00 00 48 8b 48 08 4c 89 c0 41 f6 c0 01
+0x0000708f5dd4bb0f:   75 12 48 8d 05 08 03 dc 00 48 8b 80 80 00 00 00
+0x0000708f5dd4bb1f:   48 83 c8 01 48 8d 97 a8 01 00 00 48 87 02 48 8b
+0x0000708f5dd4bb2f:   41 50 48 85 c0 74 09 48 8d 51 50 31 c0 48 87 02
+0x0000708f5dd4bb3f:   0f b7 56 04 49 89 f1 8b 06 49 c1 e9 03 c1 e2 08
+0x0000708f5dd4bb4f:   44 31 ca 44 0f b7 4e 06 66 41 c1 c1 08 44 31 ca 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x0000708f31cfdef0 is pointing into the stack for thread: 0x0000708f5823dd10
+stack at sp + 1 slots: 0x0000708f5823dd10 is a thread
+stack at sp + 2 slots: 0x0 is null
+stack at sp + 3 slots: 0x0000708ee3481628 is pointing into metadata
+stack at sp + 4 slots: 0x0000708f31cfaeb0 is pointing into the stack for thread: 0x0000708f5823dd10
+stack at sp + 5 slots: 0x0000708f5e54e287: <offset 0x0000000000f4e287> in /usr/lib/jvm/java-21-openjdk-amd64/lib/server/libjvm.so at 0x0000708f5d600000
+stack at sp + 6 slots: 0x0000708f31cfde98 is pointing into the stack for thread: 0x0000708f5823dd10
+stack at sp + 7 slots: 0x0000708f31cfde9c is pointing into the stack for thread: 0x0000708f5823dd10
+
+--------------------------------------------------------------------------------
+Decoding CodeBlob, name: counter_overflow Runtime1 stub, at  [0x0000708f47e49980, 0x0000708f47e49b60]  480 bytes
+
+[error occurred during error reporting (printing code blobs if possible), id 0x7, SIGBUS (0x7) at pc=0x0000708f5ec3cff3]
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
