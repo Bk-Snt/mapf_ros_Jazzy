@@ -1,0 +1,1 @@
+/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_c/mapf_msgs/msg/rosidl_generator_c__visibility_control.h

@@ -1,0 +1,6 @@
+msg/GlobalPlan.idl
+msg/GlobalPlan.msg
+msg/Goal.idl
+msg/Goal.msg
+msg/SinglePlan.idl
+msg/SinglePlan.msg

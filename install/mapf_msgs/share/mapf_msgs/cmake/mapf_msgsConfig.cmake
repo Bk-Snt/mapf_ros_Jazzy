@@ -1,0 +1,1 @@
+/home/wei/ros2_map/build/mapf_msgs/ament_cmake_core/mapf_msgsConfig.cmake

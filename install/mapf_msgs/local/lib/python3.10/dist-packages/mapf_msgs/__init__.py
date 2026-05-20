@@ -1,0 +1,1 @@
+/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_py/mapf_msgs/__init__.py

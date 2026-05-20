@@ -1,0 +1,88 @@
+-- The C compiler identification is GNU 9.5.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclcpp_action: 16.0.19 (/opt/ros/humble/share/rclcpp_action/cmake)
+-- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found tf2_geometry_msgs: 0.25.20 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found nav2_util: 1.1.20 (/opt/ros/humble/share/nav2_util/cmake)
+-- Found nav2_costmap_2d: 1.1.20 (/opt/ros/humble/share/nav2_costmap_2d/cmake)
+-- Found mapf_msgs: 2.0.0 (/home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake)
+-- Found mapf_ros: 0.0.0 (/home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake)
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wei/ros2_map/build/mapf_base
+[ 37%] [32mBuilding CXX object CMakeFiles/mapf_base.dir/src/mapf_base.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/plan_executor.dir/example/plan_executor.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/goal_transformer.dir/example/goal_transformer.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable goal_transformer[0m
+[ 62%] [32m[1mLinking CXX executable plan_executor[0m
+[ 62%] Built target goal_transformer
+[ 62%] Built target plan_executor
+[ 75%] [32m[1mLinking CXX shared library libmapf_base.so[0m
+[ 75%] Built target mapf_base
+[ 87%] [32mBuilding CXX object CMakeFiles/mapf_base_node.dir/src/mapf_base_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable mapf_base_node[0m
+[100%] Built target mapf_base_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/mapf_base_node
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/goal_transformer
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_executor
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/include//mapf_base/mapf_base.hpp
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/costmap_params.yaml
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/mapf_params.yaml
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_warehouse_params.yaml
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/mapf_example.launch.py
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/whca_warehouse.launch.py
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/package_run_dependencies/mapf_base
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/parent_prefix_path/mapf_base
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.sh
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.sh
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.bash
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.sh
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.zsh
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/packages/mapf_base
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig.cmake
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig-version.cmake
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.xml

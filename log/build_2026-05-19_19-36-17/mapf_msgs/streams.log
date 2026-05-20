@@ -1,0 +1,263 @@
+[0.008s] Invoking command in '/home/wei/ros2_map/build/mapf_msgs': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake /home/wei/ros2_map/mapf_ros/mapf_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/wei/ros2_map/install/mapf_msgs
+[0.195s] -- The C compiler identification is GNU 9.5.0
+[0.316s] -- The CXX compiler identification is GNU 11.4.0
+[0.325s] -- Detecting C compiler ABI info
+[0.378s] -- Detecting C compiler ABI info - done
+[0.383s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.384s] -- Detecting C compile features
+[0.384s] -- Detecting C compile features - done
+[0.387s] -- Detecting CXX compiler ABI info
+[0.448s] -- Detecting CXX compiler ABI info - done
+[0.453s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.453s] -- Detecting CXX compile features
+[0.454s] -- Detecting CXX compile features - done
+[0.460s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.584s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.642s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.674s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.719s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.725s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.737s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.752s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.772s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.832s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.851s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.879s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.242s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.670s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.802s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.817s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.819s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.841s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.841s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.841s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.841s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.858s] -- Found PythonExtra: .so  
+[1.991s] -- Configuring done
+[2.015s] -- Generating done
+[2.024s] -- Build files have been written to: /home/wei/ros2_map/build/mapf_msgs
+[2.033s] Invoked command in '/home/wei/ros2_map/build/mapf_msgs' returned '0': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake /home/wei/ros2_map/mapf_ros/mapf_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/wei/ros2_map/install/mapf_msgs
+[2.034s] Invoking command in '/home/wei/ros2_map/build/mapf_msgs': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake --build /home/wei/ros2_map/build/mapf_msgs -- -j16 -l16
+[2.061s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.068s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.068s] [  6%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[2.074s] [  6%] Built target ament_cmake_python_symlink_mapf_msgs
+[2.241s] [  6%] Built target mapf_msgs__rs
+[2.249s] running egg_info
+[2.250s] creating mapf_msgs.egg-info
+[2.250s] writing mapf_msgs.egg-info/PKG-INFO
+[2.250s] writing dependency_links to mapf_msgs.egg-info/dependency_links.txt
+[2.250s] writing top-level names to mapf_msgs.egg-info/top_level.txt
+[2.250s] writing manifest file 'mapf_msgs.egg-info/SOURCES.txt'
+[2.252s] reading manifest file 'mapf_msgs.egg-info/SOURCES.txt'
+[2.253s] writing manifest file 'mapf_msgs.egg-info/SOURCES.txt'
+[2.272s] [  6%] Built target ament_cmake_python_build_mapf_msgs_egg
+[2.298s] [ 12%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_c.dir/rosidl_generator_c/mapf_msgs/msg/detail/single_plan__functions.c.o[0m
+[2.298s] [ 12%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_c.dir/rosidl_generator_c/mapf_msgs/msg/detail/goal__functions.c.o[0m
+[2.299s] [ 12%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_c.dir/rosidl_generator_c/mapf_msgs/msg/detail/global_plan__functions.c.o[0m
+[2.301s] [ 12%] Built target mapf_msgs__cpp
+[2.308s] [ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.309s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.309s] [ 18%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.357s] [ 20%] [32m[1mLinking C shared library libmapf_msgs__rosidl_generator_c.so[0m
+[2.381s] [ 20%] Built target mapf_msgs__rosidl_generator_c
+[2.389s] [ 27%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.389s] [ 27%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.389s] [ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.495s] [ 29%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mapf_msgs/msg/global_plan__type_support.cpp.o[0m
+[2.495s] [ 31%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mapf_msgs/msg/goal__type_support.cpp.o[0m
+[2.495s] [ 33%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mapf_msgs/msg/single_plan__type_support.cpp.o[0m
+[2.537s] [ 35%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mapf_msgs/msg/detail/single_plan__type_support.cpp.o[0m
+[2.538s] [ 39%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mapf_msgs/msg/detail/goal__type_support.cpp.o[0m
+[2.538s] [ 39%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mapf_msgs/msg/detail/global_plan__type_support.cpp.o[0m
+[2.554s] [ 45%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mapf_msgs/msg/detail/dds_fastrtps/global_plan__type_support.cpp.o[0m
+[2.554s] [ 45%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mapf_msgs/msg/detail/dds_fastrtps/goal__type_support.cpp.o[0m
+[2.554s] [ 45%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mapf_msgs/msg/detail/dds_fastrtps/single_plan__type_support.cpp.o[0m
+[2.606s] [ 47%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mapf_msgs/msg/goal__type_support.cpp.o[0m
+[2.606s] [ 50%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mapf_msgs/msg/single_plan__type_support.cpp.o[0m
+[2.607s] [ 52%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mapf_msgs/msg/global_plan__type_support.cpp.o[0m
+[2.644s] [ 54%] [32m[1mLinking CXX shared library libmapf_msgs__rosidl_typesupport_c.so[0m
+[2.668s] [ 56%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mapf_msgs/msg/detail/single_plan__type_support_c.cpp.o[0m
+[2.668s] [ 58%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mapf_msgs/msg/detail/global_plan__type_support_c.cpp.o[0m
+[2.668s] [ 60%] [32mBuilding CXX object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mapf_msgs/msg/detail/goal__type_support_c.cpp.o[0m
+[2.681s] [ 62%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mapf_msgs/msg/detail/single_plan__type_support.c.o[0m
+[2.685s] [ 64%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mapf_msgs/msg/detail/global_plan__type_support.c.o[0m
+[2.685s] [ 66%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mapf_msgs/msg/detail/goal__type_support.c.o[0m
+[2.706s] [ 66%] Built target mapf_msgs__rosidl_typesupport_c
+[2.764s] [ 68%] [32m[1mLinking C shared library libmapf_msgs__rosidl_typesupport_introspection_c.so[0m
+[2.812s] [ 68%] Built target mapf_msgs__rosidl_typesupport_introspection_c
+[2.872s] [ 70%] [32m[1mLinking CXX shared library libmapf_msgs__rosidl_typesupport_cpp.so[0m
+[2.922s] [ 70%] Built target mapf_msgs__rosidl_typesupport_cpp
+[3.027s] [ 72%] [32m[1mLinking CXX shared library libmapf_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[3.081s] [ 75%] [32m[1mLinking CXX shared library libmapf_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[3.082s] [ 75%] Built target mapf_msgs__rosidl_typesupport_fastrtps_c
+[3.085s] [ 77%] [32m[1mLinking CXX shared library libmapf_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.145s] [ 77%] Built target mapf_msgs__rosidl_typesupport_introspection_cpp
+[3.149s] [ 77%] Built target mapf_msgs__rosidl_typesupport_fastrtps_cpp
+[3.163s] [ 77%] Built target mapf_msgs
+[3.177s] [ 79%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.486s] [ 79%] Built target mapf_msgs__py
+[3.500s] [ 83%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_py.dir/rosidl_generator_py/mapf_msgs/msg/_single_plan_s.c.o[0m
+[3.500s] [ 85%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_py.dir/rosidl_generator_py/mapf_msgs/msg/_global_plan_s.c.o[0m
+[3.500s] [ 85%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_generator_py.dir/rosidl_generator_py/mapf_msgs/msg/_goal_s.c.o[0m
+[3.603s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/mapf_msgs/libmapf_msgs__rosidl_generator_py.so[0m
+[3.651s] [ 87%] Built target mapf_msgs__rosidl_generator_py
+[3.673s] [ 89%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.674s] [ 93%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.674s] [ 93%] [32mBuilding C object CMakeFiles/mapf_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[3.753s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/mapf_msgs/mapf_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.756s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/mapf_msgs/mapf_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.768s] [100%] [32m[1mLinking C shared library rosidl_generator_py/mapf_msgs/mapf_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.788s] [100%] Built target mapf_msgs__rosidl_typesupport_c__pyext
+[3.796s] [100%] Built target mapf_msgs__rosidl_typesupport_introspection_c__pyext
+[3.808s] [100%] Built target mapf_msgs__rosidl_typesupport_fastrtps_c__pyext
+[3.818s] Invoked command in '/home/wei/ros2_map/build/mapf_msgs' returned '0': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake --build /home/wei/ros2_map/build/mapf_msgs -- -j16 -l16
+[3.828s] Invoking command in '/home/wei/ros2_map/build/mapf_msgs': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake --install /home/wei/ros2_map/build/mapf_msgs
+[3.837s] -- Install configuration: ""
+[3.838s] -- Execute custom install script
+[3.838s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/ament_index/resource_index/rosidl_interfaces/mapf_msgs
+[3.846s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__functions.h
+[3.854s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__struct.h
+[3.861s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__type_support.h
+[3.869s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__functions.h
+[3.876s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__struct.h
+[3.882s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__type_support.h
+[3.889s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__functions.h
+[3.896s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__struct.h
+[3.902s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__type_support.h
+[3.909s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/global_plan.h
+[3.916s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/goal.h
+[3.924s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/rosidl_generator_c__visibility_control.h
+[3.934s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/single_plan.h
+[3.943s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/library_path.sh
+[3.950s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/library_path.dsv
+[3.956s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__rosidl_typesupport_fastrtps_c.h
+[3.962s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__rosidl_typesupport_fastrtps_c.h
+[3.969s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__rosidl_typesupport_fastrtps_c.h
+[3.975s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.982s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__builder.hpp
+[3.991s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__struct.hpp
+[3.999s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__traits.hpp
+[4.006s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__type_support.hpp
+[4.013s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__builder.hpp
+[4.022s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__struct.hpp
+[4.031s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__traits.hpp
+[4.038s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__type_support.hpp
+[4.044s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__builder.hpp
+[4.051s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__struct.hpp
+[4.058s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__traits.hpp
+[4.065s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__type_support.hpp
+[4.072s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/global_plan.hpp
+[4.079s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/goal.hpp
+[4.087s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.093s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/single_plan.hpp
+[4.100s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__rosidl_typesupport_fastrtps_cpp.hpp
+[4.107s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__rosidl_typesupport_fastrtps_cpp.hpp
+[4.115s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__rosidl_typesupport_fastrtps_cpp.hpp
+[4.124s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.133s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__rosidl_typesupport_introspection_c.h
+[4.143s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__rosidl_typesupport_introspection_c.h
+[4.152s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__rosidl_typesupport_introspection_c.h
+[4.160s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.168s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/global_plan__rosidl_typesupport_introspection_cpp.hpp
+[4.174s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/goal__rosidl_typesupport_introspection_cpp.hpp
+[4.180s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/include/mapf_msgs/mapf_msgs/msg/detail/single_plan__rosidl_typesupport_introspection_cpp.hpp
+[4.189s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/pythonpath.sh
+[4.196s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/pythonpath.dsv
+[4.203s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs-2.0.0-py3.10.egg-info/PKG-INFO
+[4.213s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs-2.0.0-py3.10.egg-info/SOURCES.txt
+[4.220s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs-2.0.0-py3.10.egg-info/dependency_links.txt
+[4.226s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs-2.0.0-py3.10.egg-info/top_level.txt
+[4.234s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/__init__.py
+[4.242s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_c.c
+[4.248s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.255s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[4.262s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/libmapf_msgs__rosidl_generator_py.so
+[4.268s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.275s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.281s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.287s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/__init__.py
+[4.293s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_global_plan.py
+[4.299s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_global_plan_s.c
+[4.305s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_goal.py
+[4.311s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_goal_s.c
+[4.318s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_single_plan.py
+[4.324s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_single_plan_s.c
+[4.331s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.331s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.331s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/mapf_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.332s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/ament_index/resource_index/rust_packages/mapf_msgs
+[4.338s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/rust/Cargo.toml
+[4.344s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/rust/build.rs
+[4.351s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/rust/src/lib.rs
+[4.357s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/rust/src/msg.rs
+[4.364s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/rust/src/msg/rmw.rs
+[4.370s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/Goal.idl
+[4.376s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/SinglePlan.idl
+[4.383s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/GlobalPlan.idl
+[4.389s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/Goal.msg
+[4.397s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/SinglePlan.msg
+[4.405s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/msg/GlobalPlan.msg
+[4.412s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/ament_index/resource_index/package_run_dependencies/mapf_msgs
+[4.419s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/ament_index/resource_index/parent_prefix_path/mapf_msgs
+[4.426s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/ament_prefix_path.sh
+[4.434s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/ament_prefix_path.dsv
+[4.442s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/path.sh
+[4.449s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/environment/path.dsv
+[4.455s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/local_setup.bash
+[4.462s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/local_setup.sh
+[4.467s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/local_setup.zsh
+[4.473s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/local_setup.dsv
+[4.479s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/package.dsv
+[4.485s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/ament_index/resource_index/packages/mapf_msgs
+[4.491s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/rosidl_cmake-extras.cmake
+[4.497s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.503s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.509s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[4.516s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[4.522s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.529s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.535s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgsConfig.cmake
+[4.543s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgsConfig-version.cmake
+[4.548s] -- Symlinking: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/package.xml
+[4.554s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_generator_c.so
+[4.554s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_generator_c.so" to ""
+[4.554s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_fastrtps_c.so
+[4.554s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[4.554s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_fastrtps_cpp.so
+[4.555s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[4.555s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_introspection_c.so
+[4.555s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_introspection_c.so" to ""
+[4.555s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_c.so
+[4.555s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_c.so" to ""
+[4.555s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_introspection_cpp.so
+[4.555s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[4.555s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_cpp.so
+[4.556s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_typesupport_cpp.so" to ""
+[4.581s] Listing '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs'...
+[4.581s] Compiling '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/__init__.py'...
+[4.581s] Listing '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg'...
+[4.581s] Compiling '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/__init__.py'...
+[4.581s] Compiling '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_global_plan.py'...
+[4.581s] Compiling '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_goal.py'...
+[4.581s] Compiling '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages/mapf_msgs/msg/_single_plan.py'...
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_generator_py.so
+[4.584s] -- Set runtime path of "/home/wei/ros2_map/install/mapf_msgs/lib/libmapf_msgs__rosidl_generator_py.so" to ""
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_generator_cExport.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_generator_cExport-noconfig.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_generator_cppExport.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.584s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_introspection_cExport.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_cExport.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_cppExport.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/mapf_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_generator_pyExport.cmake
+[4.585s] -- Installing: /home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake/export_mapf_msgs__rosidl_generator_pyExport-noconfig.cmake
+[4.587s] Invoked command in '/home/wei/ros2_map/build/mapf_msgs' returned '0': CMAKE_PREFIX_PATH=/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble /usr/bin/cmake --install /home/wei/ros2_map/build/mapf_msgs

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "mapf_msgs__rs",
+		"source" : "/home/wei/ros2_map/build/mapf_msgs/mapf_msgs__rs"
+	}
+}

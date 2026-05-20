@@ -1,0 +1,52 @@
+[0.011s] Invoking command in '/home/wei/ros2_map/build/mapf_base': AMENT_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64 PYTHONPATH=/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/wei/ros2_map/build/mapf_base -- -j16 -l16
+[0.044s] Consolidate compiler generated dependencies of target plan_animator
+[0.055s] [ 20%] Built target goal_transformer
+[0.056s] [ 30%] Building CXX object CMakeFiles/plan_animator.dir/example/plan_animator.cpp.o
+[0.058s] [ 50%] Built target plan_executor
+[0.060s] [ 70%] Built target mapf_base
+[0.085s] [ 90%] Built target mapf_base_node
+[6.241s] [100%] Linking CXX executable plan_animator
+[6.842s] [100%] Built target plan_animator
+[6.849s] Invoked command in '/home/wei/ros2_map/build/mapf_base' returned '0': AMENT_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64 PYTHONPATH=/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/wei/ros2_map/build/mapf_base -- -j16 -l16
+[6.859s] Invoking command in '/home/wei/ros2_map/build/mapf_base': AMENT_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64 PYTHONPATH=/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/wei/ros2_map/build/mapf_base
+[6.865s] -- Install configuration: ""
+[6.865s] -- Execute custom install script
+[6.865s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/mapf_base_node
+[6.865s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/goal_transformer
+[6.865s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_executor
+[6.865s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_animator
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/include//mapf_base/mapf_base.hpp
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/costmap_params.yaml
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/mapf_params.yaml
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_costmap_params.yaml
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_warehouse_params.yaml
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/gazebo_warehouse.launch.py
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/mapf_example.launch.py
+[6.866s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/whca_warehouse.launch.py
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.pgm
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.py
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.yaml
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse.world
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse_ign.sdf
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_0.sdf
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_1.sdf
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_2.sdf
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_3.sdf
+[6.867s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/package_run_dependencies/mapf_base
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/parent_prefix_path/mapf_base
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.sh
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.dsv
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.sh
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.dsv
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.bash
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.sh
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.zsh
+[6.868s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.dsv
+[6.868s] -- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.dsv
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/packages/mapf_base
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_include_directories-extras.cmake
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_dependencies-extras.cmake
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig.cmake
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig-version.cmake
+[6.874s] -- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.xml
+[6.875s] Invoked command in '/home/wei/ros2_map/build/mapf_base' returned '0': AMENT_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble LD_LIBRARY_PATH=/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64 PYTHONPATH=/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/wei/ros2_map/build/mapf_base

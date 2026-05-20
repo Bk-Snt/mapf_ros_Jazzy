@@ -1,0 +1,154 @@
+[0.000000] (-) TimerEvent: {}
+[0.000104] (-) JobUnselected: {'identifier': 'mapf_msgs'}
+[0.000130] (-) JobUnselected: {'identifier': 'mapf_ros'}
+[0.000172] (mapf_base) JobQueued: {'identifier': 'mapf_base', 'dependencies': OrderedDict([('mapf_msgs', '/home/wei/ros2_map/install/mapf_msgs'), ('mapf_ros', '/home/wei/ros2_map/install/mapf_ros')])}
+[0.000451] (mapf_base) JobStarted: {'identifier': 'mapf_base'}
+[0.011553] (mapf_base) JobProgress: {'identifier': 'mapf_base', 'progress': 'cmake'}
+[0.012046] (mapf_base) JobProgress: {'identifier': 'mapf_base', 'progress': 'build'}
+[0.012551] (mapf_base) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/wei/ros2_map/build/mapf_base', '--', '-j16', '-l16'], 'cwd': '/home/wei/ros2_map/build/mapf_base', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'us.anthropic.claude-opus-4-6-v1'), ('AI_AGENT', 'claude-code_2-1-139_agent'), ('LANGUAGE', 'en_AU:en_GB:en'), ('USER', 'wei'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'en_AU.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CLAUDE_CODE_USE_BEDROCK', '1'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64'), ('HOME', '/home/wei'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_AU.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1579'), ('SYSTEMD_EXEC_PID', '4408'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '94299'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/wei/Documents/ros2_ws/install:/home/wei/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'wei'), ('JOURNAL_STREAM', '8:26670'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '17369'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'wei'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/usr/local/cuda-12.1/bin:/home/wei/.local/bin:/home/wei/bin:/usr/local/cuda-11.7/bin:/home/wei/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/wei/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/wei/.local/bin:/home/wei/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/wei/.local/bin:/home/wei/bin:/usr/local/cuda-11.7/bin:/home/wei/anaconda3/condabin:/home/wei/.local/bin:/home/wei/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/bin:/home/wei/bin:/usr/bin:/usr/bin:/home/wei/bin:/usr/bin:/home/wei/.claude/plugins/cache/everything-claude-code/everything-claude-code/1.4.1/bin:/home/wei/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin'), ('SESSION_MANAGER', 'local/rmit-ia-xenon:@/tmp/.ICE-unix/4344,unix/rmit-ia-xenon:/tmp/.ICE-unix/4344'), ('INVOCATION_ID', 'd830b8de7d8244399e2dbc9c193e03ea'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_AU.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'medium'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_AU.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1002/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1002/vscode-git-ae696913e0.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1002/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/wei/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_AU.UTF-8'), ('AWS_PROFILE', 'myorg'), ('QT_ACCESSIBILITY', '1'), ('AWS_REGION', 'us-east-1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_SESSION_ID', '6056064e-bbfd-4747-bc6f-88cf3249f288'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('IGN_GAZEBO_RESOURCE_PATH', '/usr/share/ignition/ignition-gazebo6/worlds'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'en_AU.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1002/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_AU.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/wei/ros2_map/build/mapf_base'), ('OBSIDIAN_API_KEY', '0236d7be2b82b2019777cd68bf7a809b190b89e0cb31c89418d92f424bb35378'), ('CUDA_HOME', '/usr/local/cuda-11.7'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/wei/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/wei/.local/share/claude/versions/2.1.139'), ('PYTHONPATH', '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:/home/wei/Documents/ros2_ws/install/rover_description/lib/python3.10/site-packages:/home/wei/Documents/ros2_ws/install/my_first_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_AU.UTF-8'), ('LC_PAPER', 'en_AU.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble')]), 'shell': False}
+[0.050955] (mapf_base) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target plan_animator\n'}
+[0.060550] (mapf_base) StdoutLine: {'line': b'[ 10%] Linking CXX executable goal_transformer\n'}
+[0.063926] (mapf_base) StdoutLine: {'line': b'[ 30%] Linking CXX executable plan_executor\n'}
+[0.064095] (mapf_base) StdoutLine: {'line': b'[ 30%] Building CXX object CMakeFiles/plan_animator.dir/example/plan_animator.cpp.o\n'}
+[0.067833] (mapf_base) StdoutLine: {'line': b'[ 40%] Linking CXX shared library libmapf_base.so\n'}
+[0.099843] (-) TimerEvent: {}
+[0.200210] (-) TimerEvent: {}
+[0.300794] (-) TimerEvent: {}
+[0.401269] (-) TimerEvent: {}
+[0.501773] (-) TimerEvent: {}
+[0.602078] (-) TimerEvent: {}
+[0.702443] (-) TimerEvent: {}
+[0.802847] (-) TimerEvent: {}
+[0.903771] (-) TimerEvent: {}
+[1.004104] (-) TimerEvent: {}
+[1.104482] (-) TimerEvent: {}
+[1.204978] (-) TimerEvent: {}
+[1.305374] (-) TimerEvent: {}
+[1.405824] (-) TimerEvent: {}
+[1.506259] (-) TimerEvent: {}
+[1.606758] (-) TimerEvent: {}
+[1.707258] (-) TimerEvent: {}
+[1.807612] (-) TimerEvent: {}
+[1.908115] (-) TimerEvent: {}
+[2.008568] (-) TimerEvent: {}
+[2.015660] (mapf_base) StdoutLine: {'line': b'[ 50%] Built target plan_executor\n'}
+[2.099057] (mapf_base) StdoutLine: {'line': b'[ 60%] Built target goal_transformer\n'}
+[2.108768] (-) TimerEvent: {}
+[2.209073] (-) TimerEvent: {}
+[2.309347] (-) TimerEvent: {}
+[2.320782] (mapf_base) StdoutLine: {'line': b'[ 70%] Built target mapf_base\n'}
+[2.347606] (mapf_base) StdoutLine: {'line': b'[ 80%] Linking CXX executable mapf_base_node\n'}
+[2.409427] (-) TimerEvent: {}
+[2.509619] (-) TimerEvent: {}
+[2.609904] (-) TimerEvent: {}
+[2.710137] (-) TimerEvent: {}
+[2.810294] (-) TimerEvent: {}
+[2.910452] (-) TimerEvent: {}
+[3.010671] (-) TimerEvent: {}
+[3.110897] (-) TimerEvent: {}
+[3.123657] (mapf_base) StdoutLine: {'line': b'[ 90%] Built target mapf_base_node\n'}
+[3.211031] (-) TimerEvent: {}
+[3.313113] (-) TimerEvent: {}
+[3.413377] (-) TimerEvent: {}
+[3.513772] (-) TimerEvent: {}
+[3.614019] (-) TimerEvent: {}
+[3.714337] (-) TimerEvent: {}
+[3.814634] (-) TimerEvent: {}
+[3.914891] (-) TimerEvent: {}
+[4.015155] (-) TimerEvent: {}
+[4.115503] (-) TimerEvent: {}
+[4.215678] (-) TimerEvent: {}
+[4.315837] (-) TimerEvent: {}
+[4.415991] (-) TimerEvent: {}
+[4.516150] (-) TimerEvent: {}
+[4.616343] (-) TimerEvent: {}
+[4.716559] (-) TimerEvent: {}
+[4.816729] (-) TimerEvent: {}
+[4.916918] (-) TimerEvent: {}
+[5.017116] (-) TimerEvent: {}
+[5.117296] (-) TimerEvent: {}
+[5.217546] (-) TimerEvent: {}
+[5.317776] (-) TimerEvent: {}
+[5.417941] (-) TimerEvent: {}
+[5.518171] (-) TimerEvent: {}
+[5.618418] (-) TimerEvent: {}
+[5.718593] (-) TimerEvent: {}
+[5.818835] (-) TimerEvent: {}
+[5.919304] (-) TimerEvent: {}
+[6.019516] (-) TimerEvent: {}
+[6.119735] (-) TimerEvent: {}
+[6.219894] (-) TimerEvent: {}
+[6.320046] (-) TimerEvent: {}
+[6.420297] (-) TimerEvent: {}
+[6.520702] (-) TimerEvent: {}
+[6.620972] (-) TimerEvent: {}
+[6.721168] (-) TimerEvent: {}
+[6.821317] (-) TimerEvent: {}
+[6.921478] (-) TimerEvent: {}
+[7.021662] (-) TimerEvent: {}
+[7.121834] (-) TimerEvent: {}
+[7.221989] (-) TimerEvent: {}
+[7.322159] (-) TimerEvent: {}
+[7.422319] (-) TimerEvent: {}
+[7.522497] (-) TimerEvent: {}
+[7.622774] (-) TimerEvent: {}
+[7.722918] (-) TimerEvent: {}
+[7.823158] (-) TimerEvent: {}
+[7.923429] (-) TimerEvent: {}
+[8.023643] (-) TimerEvent: {}
+[8.124121] (-) TimerEvent: {}
+[8.191800] (mapf_base) StdoutLine: {'line': b'[100%] Linking CXX executable plan_animator\n'}
+[8.224222] (-) TimerEvent: {}
+[8.324444] (-) TimerEvent: {}
+[8.424747] (-) TimerEvent: {}
+[8.525041] (-) TimerEvent: {}
+[8.625327] (-) TimerEvent: {}
+[8.725562] (-) TimerEvent: {}
+[8.825758] (-) TimerEvent: {}
+[8.867160] (mapf_base) StdoutLine: {'line': b'[100%] Built target plan_animator\n'}
+[8.876766] (mapf_base) CommandEnded: {'returncode': 0}
+[8.877489] (mapf_base) JobProgress: {'identifier': 'mapf_base', 'progress': 'install'}
+[8.886837] (mapf_base) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/wei/ros2_map/build/mapf_base'], 'cwd': '/home/wei/ros2_map/build/mapf_base', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'us.anthropic.claude-opus-4-6-v1'), ('AI_AGENT', 'claude-code_2-1-139_agent'), ('LANGUAGE', 'en_AU:en_GB:en'), ('USER', 'wei'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'en_AU.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CLAUDE_CODE_USE_BEDROCK', '1'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/wei/ros2_map/install/mapf_ros/lib:/home/wei/ros2_map/install/mapf_msgs/lib:/usr/local/cuda-12.1/lib64:/usr/local/cuda-11.7/lib64:/usr/local/cuda-12.1/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.7/lib64'), ('HOME', '/home/wei'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_AU.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1579'), ('SYSTEMD_EXEC_PID', '4408'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '94299'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/wei/Documents/ros2_ws/install:/home/wei/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'wei'), ('JOURNAL_STREAM', '8:26670'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '17369'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'wei'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/usr/local/cuda-12.1/bin:/home/wei/.local/bin:/home/wei/bin:/usr/local/cuda-11.7/bin:/home/wei/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/wei/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/wei/.local/bin:/home/wei/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/home/wei/.npm-global/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/home/wei/.local/bin:/home/wei/bin:/usr/local/cuda-11.7/bin:/home/wei/anaconda3/condabin:/home/wei/.local/bin:/home/wei/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/bin:/home/wei/bin:/usr/bin:/usr/bin:/home/wei/bin:/usr/bin:/home/wei/.claude/plugins/cache/everything-claude-code/everything-claude-code/1.4.1/bin:/home/wei/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/bin'), ('SESSION_MANAGER', 'local/rmit-ia-xenon:@/tmp/.ICE-unix/4344,unix/rmit-ia-xenon:/tmp/.ICE-unix/4344'), ('INVOCATION_ID', 'd830b8de7d8244399e2dbc9c193e03ea'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_AU.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'medium'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_AU.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1002/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1002/vscode-git-ae696913e0.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1002/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/wei/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_AU.UTF-8'), ('AWS_PROFILE', 'myorg'), ('QT_ACCESSIBILITY', '1'), ('AWS_REGION', 'us-east-1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_SESSION_ID', '6056064e-bbfd-4747-bc6f-88cf3249f288'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('IGN_GAZEBO_RESOURCE_PATH', '/usr/share/ignition/ignition-gazebo6/worlds'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'en_AU.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1002/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_AU.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/wei/ros2_map/build/mapf_base'), ('OBSIDIAN_API_KEY', '0236d7be2b82b2019777cd68bf7a809b190b89e0cb31c89418d92f424bb35378'), ('CUDA_HOME', '/usr/local/cuda-11.7'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/wei/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/wei/.local/share/claude/versions/2.1.139'), ('PYTHONPATH', '/home/wei/ros2_map/install/mapf_msgs/local/lib/python3.10/dist-packages:/home/wei/Documents/ros2_ws/install/rover_description/lib/python3.10/site-packages:/home/wei/Documents/ros2_ws/install/my_first_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_AU.UTF-8'), ('LC_PAPER', 'en_AU.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/wei/ros2_map/install/mapf_ros:/home/wei/ros2_map/install/mapf_msgs:/home/wei/Documents/ros2_ws/install/rover_description:/home/wei/Documents/ros2_ws/install/my_first_pkg:/opt/ros/humble')]), 'shell': False}
+[8.893351] (mapf_base) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.893637] (mapf_base) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[8.893768] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/mapf_base_node\n'}
+[8.893895] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/goal_transformer\n'}
+[8.894021] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_executor\n'}
+[8.894137] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_animator\n'}
+[8.894377] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/include//mapf_base/mapf_base.hpp\n'}
+[8.894541] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/costmap_params.yaml\n'}
+[8.894619] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/mapf_params.yaml\n'}
+[8.894721] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_costmap_params.yaml\n'}
+[8.894761] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_warehouse_params.yaml\n'}
+[8.894834] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/gazebo_warehouse.launch.py\n'}
+[8.894898] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/mapf_example.launch.py\n'}
+[8.894961] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/whca_warehouse.launch.py\n'}
+[8.895033] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.pgm\n'}
+[8.895100] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.py\n'}
+[8.895188] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.yaml\n'}
+[8.895345] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse.world\n'}
+[8.895382] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse_ign.sdf\n'}
+[8.895447] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_0.sdf\n'}
+[8.895522] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_1.sdf\n'}
+[8.895564] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_2.sdf\n'}
+[8.895657] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_3.sdf\n'}
+[8.895695] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/package_run_dependencies/mapf_base\n'}
+[8.895758] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/parent_prefix_path/mapf_base\n'}
+[8.895824] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.sh\n'}
+[8.895887] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.dsv\n'}
+[8.896023] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.sh\n'}
+[8.896159] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.dsv\n'}
+[8.896310] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.bash\n'}
+[8.896421] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.sh\n'}
+[8.896480] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.zsh\n'}
+[8.896535] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.dsv\n'}
+[8.896588] (mapf_base) StdoutLine: {'line': b'-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.dsv\n'}
+[8.902310] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/packages/mapf_base\n'}
+[8.902623] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.902776] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.902826] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig.cmake\n'}
+[8.902862] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig-version.cmake\n'}
+[8.902918] (mapf_base) StdoutLine: {'line': b'-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.xml\n'}
+[8.903707] (mapf_base) CommandEnded: {'returncode': 0}
+[8.914610] (mapf_base) JobEnded: {'identifier': 'mapf_base', 'rc': 0}
+[8.915349] (-) EventReactorShutdown: {}

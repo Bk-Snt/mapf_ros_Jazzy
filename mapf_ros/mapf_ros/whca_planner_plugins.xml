@@ -1,0 +1,5 @@
+<library path="whca_planner">
+  <class name="mapf_planner/WHCAROS" type="mapf::WHCAROS" base_class_type="mapf::MAPFROS">
+    <description>Windowed Hierarchical Cooperative A* (WHCA*) planner</description>
+  </class>
+</library>

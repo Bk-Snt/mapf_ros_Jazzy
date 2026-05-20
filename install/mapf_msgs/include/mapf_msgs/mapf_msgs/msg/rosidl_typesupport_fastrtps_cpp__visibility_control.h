@@ -1,0 +1,1 @@
+/home/wei/ros2_map/build/mapf_msgs/rosidl_typesupport_fastrtps_cpp/mapf_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h

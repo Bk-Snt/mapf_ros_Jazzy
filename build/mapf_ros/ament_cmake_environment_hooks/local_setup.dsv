@@ -1,0 +1,3 @@
+source;share/mapf_ros/environment/ament_prefix_path.sh
+source;share/mapf_ros/environment/library_path.sh
+source;share/mapf_ros/environment/path.sh

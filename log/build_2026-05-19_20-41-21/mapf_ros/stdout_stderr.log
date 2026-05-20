@@ -1,0 +1,86 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 16.0.19 (/opt/ros/humble/share/rclcpp_action/cmake)
+-- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found nav2_util: 1.1.20 (/opt/ros/humble/share/nav2_util/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found nav2_costmap_2d: 1.1.20 (/opt/ros/humble/share/nav2_costmap_2d/cmake)
+-- Found mapf_msgs: 2.0.0 (/home/wei/ros2_map/install/mapf_msgs/share/mapf_msgs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wei/ros2_map/build/mapf_ros
+Consolidate compiler generated dependencies of target ecbs_planner
+Consolidate compiler generated dependencies of target sipp_planner
+Consolidate compiler generated dependencies of target cbs_planner
+Consolidate compiler generated dependencies of target whca_planner
+[ 87%] Built target whca_planner
+[100%] Built target ecbs_planner
+[ 87%] Built target sipp_planner
+[100%] Built target cbs_planner
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros//cbs_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros//ecbs_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros//sipp_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros//whca_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/lib/libcbs_planner.so
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/lib/libecbs_planner.so
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/lib/libsipp_planner.so
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/lib/libwhca_planner.so
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/cbs/a_star.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/cbs/cbs.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/cbs/cbs_env.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/cbs/cbs_ros.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/ecbs/a_star_epsilon.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/ecbs/ecbs.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/ecbs/ecbs_env.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/ecbs/ecbs_ros.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/mapf_ros.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/sipp/prioritized_sipp_env.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/sipp/prioritized_sipp_ros.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/sipp/sipp.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/utils/neighbor.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/utils/planresult.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/utils/timer.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/utils/utility.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/whca/whca.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/whca/whca_env.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/include//mapf_ros/whca/whca_ros.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cbs_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/ecbs_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/sipp_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/whca_planner_plugins.xml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/library_path.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/library_path.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/ament_index/resource_index/package_run_dependencies/mapf_ros
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/ament_index/resource_index/parent_prefix_path/mapf_ros
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/path.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/environment/path.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/local_setup.bash
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/local_setup.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/local_setup.zsh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/local_setup.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/package.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/ament_index/resource_index/packages/mapf_ros
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/ament_index/resource_index/mapf_ros__pluginlib__plugin/mapf_ros
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake/mapf_rosConfig.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/cmake/mapf_rosConfig-version.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_ros/share/mapf_ros/package.xml

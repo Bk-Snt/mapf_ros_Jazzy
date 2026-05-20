@@ -1,176 +1,105 @@
-# Multi-Agent Path Finding (MAPF) in ROS
+# Multi-Agent Path Finding (MAPF) with WHCA*
 
-<div align='center'>
-  <img src='./doc/logo.jpg'/>
-</div>
+ROS2 Humble workspace for multi-robot path planning using WHCA* (Windowed Hierarchical Cooperative A*). Robots coordinate collision-free paths through a warehouse environment with narrow aisles and shelves.
 
-<div align='center'>
-  English | <a href='./README.zh-CN.md'>中文</a>
-</div>
+## Prerequisites
 
----
-
-## Introduction
-In order to verify the multi-agent path planning algorithms on **ROS2**, 
-this repository writes a **ROS2 wrapper** on the core code of some mapf algorithms(which mainly come from [HERE](https://github.com/whoenig/libMultiRobotPlanning)) as **ros2 plugins**. The content of [this repository](https://github.com/atb033/multi_agent_path_planning) also provides a lot of help.
-
-The following algorithms are currently implemented:
-
-+ Conflict-Based Search (CBS)
-+ Enhanced Conflict-Based Search (ECBS)
-+ Prioritized Planning using SIPP(**example code** for SIPP, the code to check swap has not been written yet)
-
-## Example
-
-The test case repository shown in gif is in [https://github.com/speedzjy/ridgeback_mapf](https://github.com/speedzjy/ridgeback_mapf/tree/humble)
-
-![](./doc/mapf_demo.gif)
-
-### Conflict-Based Search (CBS)
-
-Conflict Based Search(CBS) guarantees **optimal** solutions. CBS is a two-level algorithm where the high level search is performed in a constraint tree (CT) whose nodes include constraints on time and location for a single agent. At each node in the constraint tree a low-level search is performed to find new paths for all agents under the constraints given by the high-level node.
-
-On the low-level of the implementation, A* is used to find paths for individual agents.
-
-
-#### Reference
-
-- [Conflict-based search for optimal multi-agent path finding](https://doi.org/10.1016/j.artint.2014.11.006)
-
-### Enhanced Conflict-Based Search (ECBS)
-
-Enhanced Conflict-Based-Search (ECBS) provides a **suboptimal** solution for multi-agent path finding. In other words, ECBS provides a "quick" solution, rather than the optimal solution
-provided by CBS.
-
-
-#### Reference
-
-- [Suboptimal Variants of the Conflict-Based Search Algorithm for the Multi-Agent Pathfinding Problem](https://doi.org/10.1609/socs.v5i1.18315)
-
-### Prioritized Planning using SIPP
-
- Safe Interval Path Planning(SIPP) is a local planner for a single agent, using which, a collision-free plan can be generated, after considering the static and dynamic obstacles in the environment.In the case of multi-agent path planning with priority, the other agents in the environment are considered as dynamic obstacles. The trajectory of the agent that plans first will be regarded as the dynamic obstacle trajectory attached to the constraints of the agents that plan later.
-
- The implementation of Prioritized Planning using SIPP is an **example code**. The code to check swap has not been written yet.
-
-#### Reference
-
-- [SIPP: Safe Interval Path Planning for Dynamic Environments](https://www.cs.cmu.edu/~maxim/files/sipp_icra11.pdf)
+- ROS2 Humble
+- nav2 stack (`nav2_costmap_2d`, `nav2_map_server`, `nav2_lifecycle_manager`, `nav2_util`)
+- `tf2_ros`, `pluginlib`
 
 ## Build
 
-```
-mkdir -p mapf_ws/src && cd mapf_ws/src
-git clone -b humble https://github.com/speedzjy/mapf_ros.git 
-cd ..
+```bash
+cd ~/ros2_map
 colcon build --symlink-install
+source install/setup.bash
 ```
 
-## Launch
+## Run the WHCA* Simulation
 
-The launch file is placed in the [mapf_base/launch](https://github.com/speedzjy/mapf_ros/blob/humble/mapf_base/launch/mapf_example.launch.py)
+### Step 1: Launch the system (Terminal 1)
 
-There are two param files that need to be configured: [mapf_params.yaml](https://github.com/speedzjy/mapf_ros/blob/humble/mapf_base/params/mapf_params.yaml), [costmap_params](https://github.com/speedzjy/mapf_ros/blob/humble/mapf_base/params/costmap_params.yaml).
+```bash
+source install/setup.bash
+ros2 launch mapf_base whca_python.launch.py
+```
 
-### Notes: (very importment)
-It is **strongly recommended** to use **low-resolution maps for mapf planning** search and **high-resolution maps for local planning** with a single robot. The reasons are as follows:
+This starts:
+- Map server (30x20 warehouse grid at 1.5m/cell)
+- WHCA* Python planner node (iterative replanning)
+- Plan animator (publishes TF + robot markers at 30Hz)
+- Goal transformer (collects per-robot goals)
 
-- Both CBS and ECBS are space-time searches, if the map dimension is too high, the search will be extremely time-consuming. Solving MAPF optimally (i.e., finding a conflict-free solution of minimal cost) is NP-Complete.
-- Since the paths planned by mapf have time steps, in order to ensure that the robots do not collide, the minimum distance between each time step must be greater than the diameter of the robot.
+### Step 2: Open RViz (Terminal 2)
 
-----------------------------------------------------
-<a id="code_structure"></a>
+```bash
+source install/setup.bash
+rviz2 -d install/mapf_base/share/mapf_base/params/whca_python.rviz
+```
 
-## Introduction of Code Structure
-### Nodes
-#### 1 mapf_base
+You should see:
+- The warehouse map with shelves
+- 8 colored robots at two charging stations (4 bottom-left, 4 bottom-right)
 
-##### 1.1 Node sturcture
-The mapf_base node is the central control node just like `nav2_planner` in `ros2 navigation2` package.
+### Step 3: Run the demo (Terminal 3)
 
-**Notes: The mapf_base node only generates plans and does not publish control commands. A possible control method is to send the move_base goals to execute the control commands according to the time step of the plan.**
+```bash
+source install/setup.bash
+python3 mapf_ros/mapf_base/scripts/whca_demo.py
+```
 
-![](./doc/mapf_base_node.png)
+The demo dispatches 8 robots from two charging stations to pick locations across the warehouse. Robots from the left station must cross to the right side, and vice versa, forcing their paths to tangle in the center aisles.
 
-##### 1.2 Subscribed Topics
-- /mapf_base/mapf_goal [mapf_msgs/Goal] A set of goals for each agent that mapf_base pursues in the world.
-- /tf [tf/tfMessage] transforms from map to base_link of each agent
+## Launch Arguments
 
-##### 1.3 Published Topics
-- /mapf_base/**parameter: plan_topic** [nav_msgs/Path] | gui path to show in rviz
-- /mapf_base/global_plan [mapf_msgs/GlobalPlan] | global solution: A set of single plans with timestep
-- /mapf_base/global_costmap/costmap [nav_msgs/OccupancyGrid] | costmap of map from map_server node
+| Argument | Default | Description |
+|----------|---------|-------------|
+| `window_size` | 48 | WHCA* planning horizon (time steps) |
+| `replan_interval` | 2.0 | Seconds between dynamic replan checks (0=disabled) |
+| `map` | warehouse.yaml | Map file to use |
 
-##### 1.4 Parameters
-- ~mapf_planner: (string, default: "mapf_planner/CBSROS")
-- ~agent_num: (int, default: 2) | the number of agents.
-- ~global_frame_id: map (string, default: map) | global frame_id in /tf.
+Example with larger window:
+```bash
+ros2 launch mapf_base whca_python.launch.py window_size:=64
+```
 
-- ~planner_time_tolerance: 5.0 (double, default: DBL_MAX) | due to mapf algorithm consumes a lot of time, if the time limit is exceeded, the algorithm will automatically exit.
-- ~goal_tolerance: 1.0 (double, default: 1.0) | mapf_base node will execute mapf algorithm in a loop until the goal is reached, this parameter is better set to be the same as the map resolution
+## Dynamic Obstacles
 
-- ~base_frame_id: (string, default: "base_link") | the frame_id for each agent in the map, example:
-  - base_frame_id:
-    - agent_0: rb_0/base_link
-    - agent_1: rb_1/base_link
+The planner supports dynamic obstacles with automatic replanning. See [docs/dynamic_obstacles.md](docs/dynamic_obstacles.md) for full instructions on publishing obstacles and triggering replans.
 
-- ~plan_topic: (string, default: "plan") | which will be used to publish gui path in rviz, example:
-  - plan_topic:
-    - agent_0: rb_0/plan
-    - agent_1: rb_1/plan
+## Map Variants
 
-----------------------------------------
+Generate different warehouse layouts:
 
-The following are example nodes for test mapf algorithm.
+```bash
+cd mapf_ros/mapf_base/maps
+python3 warehouse.py simple    # fewer shelves, wider aisles
+python3 warehouse.py complex   # dense shelves, narrow aisles (default)
+python3 warehouse.py maze      # maze-like corridors
+```
 
-#### 2 goal_transformer
+Then launch with:
+```bash
+ros2 launch mapf_base whca_python.launch.py map:=warehouse_simple.yaml
+```
 
-##### 2.1 Node sturcture
-This node combines individual goal information into mapf format.
+## Stress Test
 
-![](./doc/goal_transformer.png)
+Run progressively harder scenarios to find WHCA*'s limits:
 
-##### 2.2 Subscribed Topics
-- **parameter: goal_topic** [geometry_msgs/PoseStamped]
-- /mapf_base/goal_init_flag [std_msgs/Bool] | if true, this node will pub mapf_goal
+```bash
+python3 mapf_ros/mapf_base/scripts/whca_stress_test.py      # all levels
+python3 mapf_ros/mapf_base/scripts/whca_stress_test.py 3    # specific level
+```
 
-##### 2.3 Published Topics
+## Troubleshooting
 
-- /mapf_base/mapf_goal [mapf_msgs/Goal] | send to mapf_base node
+**Stale processes**: Always kill old ROS processes before relaunching:
+```bash
+pkill -f 'ros2|mapf|rviz'
+```
 
-##### 2.4 Parameters
+**Planner timeout**: Increase window size or use a simpler map layout.
 
-- ~goal_topic: (string, default: "rb_0/goal") | used to receive goal for each agent, example:
-  - goal_topic:
-    - agent_0: rb_0/goal
-    - agent_1: rb_1/goal
-
-#### 3 plan_executor
-
-##### 3.1 Node sturcture
-This node sends the received mapf plan to move_base according to time step.
-
-![](./doc/plan_executor.png)
-
-##### 3.2 Subscribed Topics
-- /mapf_base/global_plan [mapf_msgs/GlobalPlan] | the global plan from mapf_base
-
-##### 3.3 Published Topics
-
-- /**agent_name**/move_base/goal [move_base_msgs/MoveBaseActionGoal]
-
-##### 3.4 Parameters
-- ~agent_name: (string, default: "rb_0") | set the agent name (topic "(arg agent_name)/move_base/goal" will be send to move_base) according to the agent_num param, example:
-  - agent_name:
-    - agent_0: rb_0
-    - agent_1: rb_1
-
-#### 4 whole nodes graph
-
-![](./doc/whole_graph.png)
-
----------------------------
-### ROS plugin picture
-
-![](./doc/plugins_pic.png)
-
+**No map in RViz**: The Python launch uses `/mapf/map` with Transient Local QoS. Make sure you use the `whca_python.rviz` config.

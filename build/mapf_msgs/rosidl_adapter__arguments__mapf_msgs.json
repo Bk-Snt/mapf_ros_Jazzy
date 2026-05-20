@@ -1,0 +1,8 @@
+{
+  "package_name": "mapf_msgs",
+  "non_idl_tuples": [
+    "/home/wei/ros2_map/mapf_ros/mapf_msgs:msg/Goal.msg",
+    "/home/wei/ros2_map/mapf_ros/mapf_msgs:msg/SinglePlan.msg",
+    "/home/wei/ros2_map/mapf_ros/mapf_msgs:msg/GlobalPlan.msg"
+  ]
+}

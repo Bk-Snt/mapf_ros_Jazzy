@@ -1,0 +1,86 @@
+[ 30%] Built target plan_animator
+[ 40%] Built target goal_transformer
+[ 60%] Built target plan_executor
+[ 80%] Built target mapf_base
+[100%] Built target mapf_base_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/mapf_base_node
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/goal_transformer
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_executor
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/plan_animator
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/include//mapf_base/mapf_base.hpp
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/whca_node.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/whca_demo.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/lib/mapf_base/whca_stress_test.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/costmap_params.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/mapf_params.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_costmap_params.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_python.rviz
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_warehouse.rviz
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/params/whca_warehouse_params.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/gazebo_warehouse.launch.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/mapf_example.launch.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/whca_python.launch.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/launch/whca_warehouse.launch.py
+CMake Warning (dev) at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:67 (file):
+  Policy CMP0009 is not set: FILE GLOB_RECURSE calls should not follow
+  symlinks by default.  Run "cmake --help-policy CMP0009" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:337 (ament_cmake_symlink_install_directory)
+  cmake_install.cmake:46 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/__pycache__/warehouse.cpython-310.pyc
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/build/.built_by
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/build/COLCON_IGNORE
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/.colcon_install_layout
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/COLCON_IGNORE
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/_local_setup_util_ps1.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/_local_setup_util_sh.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/local_setup.bash
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/local_setup.ps1
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/local_setup.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/local_setup.zsh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/setup.bash
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/setup.ps1
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/setup.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/install/setup.zsh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/COLCON_IGNORE
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/build_2026-05-20_09-57-50/events.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/build_2026-05-20_09-57-50/logger_all.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/latest/events.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/latest/logger_all.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/latest_build/events.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/log/latest_build/logger_all.log
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.pgm
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.py
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse_complex.pgm
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse_maze.pgm
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse_simple.pgm
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/maps/warehouse_simple.yaml
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse.world
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/worlds/warehouse_ign.sdf
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_0.sdf
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_1.sdf
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_2.sdf
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/models/robot_3.sdf
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/package_run_dependencies/mapf_base
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/parent_prefix_path/mapf_base
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/environment/path.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.bash
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.sh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.zsh
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/local_setup.dsv
+-- Symlinking: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.dsv
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/ament_index/resource_index/packages/mapf_base
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/cmake/mapf_baseConfig-version.cmake
+-- Up-to-date symlink: /home/wei/ros2_map/install/mapf_base/share/mapf_base/package.xml

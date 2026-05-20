@@ -1,0 +1,4 @@
+source;share/mapf_base/local_setup.bash
+source;share/mapf_base/local_setup.dsv
+source;share/mapf_base/local_setup.sh
+source;share/mapf_base/local_setup.zsh

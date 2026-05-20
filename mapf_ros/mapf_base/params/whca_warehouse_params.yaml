@@ -1,0 +1,94 @@
+mapf:
+  map_server:
+    ros__parameters:
+      use_sim_time: false
+
+mapf:
+  mapf_base_node:
+    ros__parameters:
+      use_sim_time: false
+      agent_num: 8
+      global_frame_id: map
+
+      planner_time_tolerance: 60.0
+      goal_tolerance: 1.0
+
+      # WHCA* parameters
+      whca:
+        window_size: 32
+
+      base_frame_id:
+        agent_0: robot_0/base_footprint
+        agent_1: robot_1/base_footprint
+        agent_2: robot_2/base_footprint
+        agent_3: robot_3/base_footprint
+        agent_4: robot_4/base_footprint
+        agent_5: robot_5/base_footprint
+        agent_6: robot_6/base_footprint
+        agent_7: robot_7/base_footprint
+
+      plan_topic:
+        agent_0: robot_0/plan
+        agent_1: robot_1/plan
+        agent_2: robot_2/plan
+        agent_3: robot_3/plan
+        agent_4: robot_4/plan
+        agent_5: robot_5/plan
+        agent_6: robot_6/plan
+        agent_7: robot_7/plan
+
+mapf:
+  plan_executor:
+    ros__parameters:
+      use_sim_time: false
+
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.3
+
+      agent_num: 8
+      agent_name:
+        agent_0: robot_0
+        agent_1: robot_1
+        agent_2: robot_2
+        agent_3: robot_3
+        agent_4: robot_4
+        agent_5: robot_5
+        agent_6: robot_6
+        agent_7: robot_7
+
+      global_frame_id: map
+
+      base_frame_id:
+        agent_0: robot_0/base_footprint
+        agent_1: robot_1/base_footprint
+        agent_2: robot_2/base_footprint
+        agent_3: robot_3/base_footprint
+        agent_4: robot_4/base_footprint
+        agent_5: robot_5/base_footprint
+        agent_6: robot_6/base_footprint
+        agent_7: robot_7/base_footprint
+
+      plan_topic:
+        agent_0: robot_0/plan
+        agent_1: robot_1/plan
+        agent_2: robot_2/plan
+        agent_3: robot_3/plan
+        agent_4: robot_4/plan
+        agent_5: robot_5/plan
+        agent_6: robot_6/plan
+        agent_7: robot_7/plan
+
+mapf:
+  goal_transformer:
+    ros__parameters:
+      use_sim_time: false
+      agent_num: 8
+      goal_topic:
+        agent_0: robot_0/goal
+        agent_1: robot_1/goal
+        agent_2: robot_2/goal
+        agent_3: robot_3/goal
+        agent_4: robot_4/goal
+        agent_5: robot_5/goal
+        agent_6: robot_6/goal
+        agent_7: robot_7/goal

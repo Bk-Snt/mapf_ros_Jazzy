@@ -1,0 +1,1 @@
+/home/wei/ros2_map/mapf_ros/mapf_msgs/msg/SinglePlan.msg

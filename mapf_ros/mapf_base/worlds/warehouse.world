@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="warehouse">
+    <!-- Physics -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Warehouse walls (37.5m x 30m at 1.5m/cell resolution, 25x20 grid) -->
+    <!-- North wall -->
+    <model name="wall_north">
+      <static>true</static>
+      <pose>18.75 30 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>37.5 0.2 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>37.5 0.2 2</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- South wall -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>18.75 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>37.5 0.2 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>37.5 0.2 2</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- West wall -->
+    <model name="wall_west">
+      <static>true</static>
+      <pose>0 15 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 30 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 30 2</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- East wall -->
+    <model name="wall_east">
+      <static>true</static>
+      <pose>37.5 15 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.2 30 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.2 30 2</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Shelf Row 1 (bottom): columns at x=6,7.5 / 13.5,15 / 21,22.5 / 28.5,30 -->
+    <!-- y range: 4.5 to 10.5 (cells 3-7, each 1.5m) -->
+    <model name="shelf_1a">
+      <static>true</static>
+      <pose>6.75 7.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_1b">
+      <static>true</static>
+      <pose>14.25 7.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_1c">
+      <static>true</static>
+      <pose>21.75 7.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_1d">
+      <static>true</static>
+      <pose>29.25 7.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Shelf Row 2 (top): same x positions, y range: 18 to 25.5 (cells 12-17) -->
+    <model name="shelf_2a">
+      <static>true</static>
+      <pose>6.75 21.75 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_2b">
+      <static>true</static>
+      <pose>14.25 21.75 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_2c">
+      <static>true</static>
+      <pose>21.75 21.75 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shelf_2d">
+      <static>true</static>
+      <pose>29.25 21.75 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3 7.5 2</size></box></geometry>
+          <material><ambient>0.8 0.6 0.2 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
