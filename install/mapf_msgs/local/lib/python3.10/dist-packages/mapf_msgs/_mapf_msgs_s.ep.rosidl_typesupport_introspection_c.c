@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_py/mapf_msgs/_mapf_msgs_s.ep.rosidl_typesupport_introspection_c.c

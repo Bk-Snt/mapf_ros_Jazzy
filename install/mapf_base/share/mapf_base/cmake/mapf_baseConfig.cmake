@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_base/ament_cmake_core/mapf_baseConfig.cmake

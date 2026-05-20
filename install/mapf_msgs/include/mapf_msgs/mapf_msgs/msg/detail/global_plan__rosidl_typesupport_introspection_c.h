@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_typesupport_introspection_c/mapf_msgs/msg/detail/global_plan__rosidl_typesupport_introspection_c.h

@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_cpp/mapf_msgs/msg/detail/global_plan__traits.hpp

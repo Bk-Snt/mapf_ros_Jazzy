@@ -1,1 +1,0 @@
-/home/wei/ros2_map/mapf_ros/mapf_base/maps/install/_local_setup_util_ps1.py

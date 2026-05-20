@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_cpp/mapf_msgs/msg/single_plan.hpp

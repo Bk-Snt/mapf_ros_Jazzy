@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_rs/mapf_msgs/rust/src/lib.rs

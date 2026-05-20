@@ -1,1 +1,0 @@
-/home/wei/ros2_map/build/mapf_msgs/rosidl_generator_c/mapf_msgs/msg/detail/global_plan__struct.h

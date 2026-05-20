@@ -1,6 +1,0 @@
-setup.py
-mapf_msgs/__init__.py
-mapf_msgs.egg-info/PKG-INFO
-mapf_msgs.egg-info/SOURCES.txt
-mapf_msgs.egg-info/dependency_links.txt
-mapf_msgs.egg-info/top_level.txt

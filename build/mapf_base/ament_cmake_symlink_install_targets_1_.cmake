@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/wei/ros2_map/build/mapf_base/goal_transformer" "TARGETS" "goal_transformer" "RUNTIME_DESTINATION" "lib/mapf_base")
