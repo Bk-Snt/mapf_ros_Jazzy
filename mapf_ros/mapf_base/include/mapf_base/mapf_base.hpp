@@ -101,7 +101,7 @@ protected:
   std::unique_ptr<nav2_util::NodeThread> costmap_thread_;
 
   pluginlib::ClassLoader<mapf::MAPFROS> mapf_loader_;
-  boost::shared_ptr<mapf::MAPFROS> mapf_planner_;
+  std::shared_ptr<mapf::MAPFROS> mapf_planner_;
 
   std::shared_ptr<tf2_ros::TransformListener> tf_{nullptr};
   std::unique_ptr<tf2_ros::Buffer> tf_buffer_;

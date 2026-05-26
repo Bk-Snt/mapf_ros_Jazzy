@@ -27,12 +27,12 @@
 
 #include "pluginlib/class_list_macros.hpp"
 
-#include <tf2/utils.h>
-#include <tf2_ros/transform_listener.h>
+#include <tf2/utils.hpp>
+#include <tf2_ros/transform_listener.hpp>
 
 #include "mapf_msgs/msg/global_plan.hpp"
-#include "mapf_msgs/msg/goal.h"
-#include "mapf_msgs/msg/single_plan.h"
+#include "mapf_msgs/msg/goal.hpp"
+#include "mapf_msgs/msg/single_plan.hpp"
 
 // ROS Wrapper for ECBS
 #include "mapf_ros/ecbs/ecbs_ros.hpp"

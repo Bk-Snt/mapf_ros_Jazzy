@@ -40,7 +40,8 @@ MAPFBase::MAPFBase(const rclcpp::NodeOptions &options)
   getParam();
 
   costmap_ros_ = std::make_shared<nav2_costmap_2d::Costmap2DROS>(
-      "mapf_costmap", std::string{get_namespace()}, "mapf_costmap");
+    "mapf_costmap", std::string{get_namespace()}, "mapf_costmap",
+    get_parameter("use_sim_time").as_bool());
 }
 
 MAPFBase::~MAPFBase() {
@@ -105,7 +106,7 @@ nav2_util::CallbackReturn MAPFBase::on_activate(const rclcpp_lifecycle::State & 
 
   // create a local planner
   try {
-    mapf_planner_ = mapf_loader_.createUniqueInstance(planner_name_);
+    mapf_planner_ = mapf_loader_.createSharedInstance(planner_name_);
     RCLCPP_INFO(this->get_logger(), "Created local_planner %s", planner_name_.c_str());
     mapf_planner_->initialize(mapf_loader_.getName(planner_name_), costmap_ros_,
                               shared_from_this());
