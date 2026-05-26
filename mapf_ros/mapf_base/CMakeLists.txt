@@ -87,7 +87,7 @@ install(DIRECTORY include/
 
 # Python scripts
 install(
-  PROGRAMS scripts/whca_node.py scripts/whca_demo.py scripts/whca_stress_test.py
+  PROGRAMS scripts/whca_node.py scripts/whca_demo.py scripts/whca_stress_test.py scripts/whca_experiment_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
