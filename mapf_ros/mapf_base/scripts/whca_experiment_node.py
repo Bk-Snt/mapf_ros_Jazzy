@@ -384,7 +384,9 @@ class WHCAExperimentNode(Node):
         self._lock = threading.Lock()
         self.create_timer(0.25, self._anim_tick)
         self._results = []
+        #TODO: uncomment 
         threading.Thread(target=self._run_all, daemon=True).start()
+        #threading.Thread(target=self._debug, daemon=True).start()
 
     # ── Animation ─────────────────────────────────────────────────────────────
 
@@ -438,10 +440,20 @@ class WHCAExperimentNode(Node):
 
     # ── Experiment loop ────────────────────────────────────────────────────────
 
+    def _debug(self):
+        """Run a single trial with animation for debugging purposes."""
+        w=8
+        a=60
+        i=2
+        self.get_logger().info(f"Running debug trial with W={w} agents={a}, trial={i}...")
+        self._run_single_trial(agent_count=a, window_size=w, trial_index=i, show=True)
+
     def _run_all(self):
-        time.sleep(8.0)
+        # time.sleep(8.0)
         total_runs = len(self.window_sizes) * len(self.agent_counts) * self.n_trials
         run_index = 0
+        
+        zero_success = []
 
         for window_size in self.window_sizes:
             for agent_count in self.agent_counts:
@@ -450,10 +462,23 @@ class WHCAExperimentNode(Node):
                     self.get_logger().info(
                         f"[{run_index}/{total_runs}] W={window_size} agents={agent_count} trial={trial+1}"
                     )
-                    self._run_single_trial(agent_count, window_size, trial, show=(trial == 0))
+                    results = self._run_single_trial(agent_count, window_size, trial, show=False)
+                    self._results.append(results)
+                    if results["success_rate"] == 0.0:
+                        zero_success.append((window_size, agent_count, trial))
 
         self._save()
         self.get_logger().info(f"All done. Results → {self.output_csv}")
+        
+        self.get_logger().info("Trials with 0% success:")
+        for window_size, agent_count, trial in zero_success:
+            self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
+        
+        self.get_logger().info("Running trials with 0% success again with animation:")
+        for window_size, agent_count, trial in zero_success:
+            self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
+            self._run_single_trial(agent_count, window_size, trial, show=True)
+            time.sleep(10)
 
     def _run_single_trial(self, agent_count, window_size, trial_index, show=False):
         seed = trial_index * 100_000 + agent_count
@@ -474,7 +499,7 @@ class WHCAExperimentNode(Node):
             f"  cycles={stats['avg_cycles']:.2f}  init={initial_time*1000:.1f}ms"
         )
 
-        self._results.append({
+        results = {
             "window_size": window_size,
             "n_agents": agent_count,
             "trial": trial_index,
@@ -483,7 +508,7 @@ class WHCAExperimentNode(Node):
             "avg_cycles": stats["avg_cycles"],
             "init_ms": initial_time * 1000,
             "max_turn_ms": (max(window_times) * 1000 if window_times else 0),
-        })
+        }
 
         if show:
             self._publish_paths(trajectories)
@@ -500,6 +525,8 @@ class WHCAExperimentNode(Node):
                         break
                 time.sleep(0.05)
             time.sleep(1.0)
+        
+        return results
 
     # ── Publishers ────────────────────────────────────────────────────────────
 
