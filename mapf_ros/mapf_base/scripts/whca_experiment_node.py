@@ -18,7 +18,6 @@ from rclpy.qos import QoSProfile, DurabilityPolicy, ReliabilityPolicy
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import Point
 from visualization_msgs.msg import Marker, MarkerArray
-from rcl_interfaces.msg import ParameterDescriptor
 
 
 # ── Algorithm ─────────────────────────────────────────────────────────────────
@@ -234,7 +233,7 @@ def generate_maze(size=32, obs=0.20, seed=None):
     
     free_cells = [(x, y) for x in range(size) for y in range(size) if grid[x, y] == 0]
     
-    return grid, free_cells
+    # return grid, free_cells
     
     while True:
         grid = np.zeros((size, size), dtype=np.int8)
@@ -325,44 +324,19 @@ COLORS=[(0.9,0.1,0.1),(0.1,0.1,0.9),(0.1,0.8,0.1),(0.7,0.1,0.9),
 class WHCAExperimentNode(Node):
     def __init__(self):
         super().__init__("whca_experiment_node")
-
-        parameter_defaults = [
-            ("window_sizes", "8,16,32"),
-            ("agent_counts", "10,20,30,40,50,60,70,80,90,100"),
-            ("n_trials", "10"),
-            ("max_turns", "100"),
-            ("cell_size", "0.5"),
-            ("animate_delay", "8.0"),
-            ("output_csv", os.path.expanduser("~/ros2_map/whca_results.csv")),
-            ("global_frame", "map"),
-        ]
-        for key, default_value in parameter_defaults:
-            self.declare_parameter(key, default_value, ParameterDescriptor(dynamic_typing=True))
-
-        def parse_int_list(key):
-            return [int(x) for x in str(self.get_parameter(key).value).split(",")]
-
-        def parse_float(key):
-            return float(str(self.get_parameter(key).value))
-
-        def parse_string(key):
-            return str(self.get_parameter(key).value)
-
-        self.window_sizes = parse_int_list("window_sizes")
-        self.agent_counts = parse_int_list("agent_counts")
-        self.n_trials = int(parse_string("n_trials"))
-        self.max_turns = int(parse_string("max_turns"))
-        self.cell_size = parse_float("cell_size")
-        self.animate_delay = parse_float("animate_delay")
-        self.output_csv = parse_string("output_csv")
-        self.frame = parse_string("global_frame")
+        
+        # Define experiment parameters and publishers.
+        self.window_sizes = [8,16,32]
+        self.agent_counts = [10,20,30,40,50,60,70,80,90,100]
+        self.n_trials = 10
+        self.max_turns = 100
+        self.cell_size = 0.5
+        self.animate_delay = 8.0
+        self.output_csv = str(os.path.expanduser("~/ros2_map/whca_results.csv"))
+        self.frame = "map"
 
         self.get_logger().info(
             f"windows={self.window_sizes}  agents={self.agent_counts}  trials={self.n_trials}"
-        )
-        self.get_logger().info(
-            "RViz tip: press F to fit the map to view, then add four MarkerArray displays:\n"
-            "  /mapf/experiment_paths  /mapf/goal_markers  /mapf/start_markers  /mapf/robot_markers"
         )
 
         publisher_qos = QoSProfile(
@@ -371,6 +345,7 @@ class WHCAExperimentNode(Node):
             depth=1,
         )
 
+        # Publishers for the map, paths, goals, starts, and robot markers.
         self.map_pub = self.create_publisher(OccupancyGrid, "map", publisher_qos)
         self.path_pub = self.create_publisher(MarkerArray, "experiment_paths", publisher_qos)
         self.goal_pub = self.create_publisher(MarkerArray, "goal_markers", publisher_qos)
@@ -384,6 +359,8 @@ class WHCAExperimentNode(Node):
         self._lock = threading.Lock()
         self.create_timer(0.25, self._anim_tick)
         self._results = []
+        
+        # Launch the experiment loop in a separate thread to avoid blocking ROS callbacks.
         #TODO: uncomment 
         threading.Thread(target=self._run_all, daemon=True).start()
         #threading.Thread(target=self._debug, daemon=True).start()
@@ -725,10 +702,12 @@ class WHCAExperimentNode(Node):
         for (window_size, agent_count), group in grouped_results:
             group = list(group)
             self.get_logger().info(
-                f"{window_size:>4}  {agent_count:>6}  {np.mean([r['success_rate'] for r in group]):>8.1f}  "
-                f"{np.mean([r['avg_path_len'] for r in group]):>7.1f}  "
-                f"{np.mean([r['avg_cycles'] for r in group]):>6.2f}  "
-                f"{np.mean([r['init_ms'] for r in group]):>8.2f}"
+                f"{window_size:>4}  "
+                f"{agent_count:>6}  "
+                f"{np.max([r['success_rate'] for r in group]):>8.1f}  "
+                f"{np.max([r['avg_path_len'] for r in group]):>7.1f}  "
+                f"{np.max([r['avg_cycles'] for r in group]):>6.2f}  "
+                f"{np.max([r['init_ms'] for r in group]):>8.2f}"
             )
 
 
