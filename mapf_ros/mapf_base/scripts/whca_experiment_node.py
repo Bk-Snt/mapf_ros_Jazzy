@@ -432,6 +432,12 @@ class WHCAExperimentNode(Node):
         self.get_logger().info(
             f"windows={self.window_sizes}  agents={self.agent_counts}  trials={self.n_trials}"
         )
+        
+        # Generate maps equal to number of trials to ensure consistent mazes
+        # across different window/agent settings for the same trial index.
+        self.trial_maps = []
+        for trial_idx in range(self.n_trials):
+            self.trial_maps.append(generate_maze(seed=trial_idx * 100_000))
 
         publisher_qos = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
@@ -453,7 +459,7 @@ class WHCAExperimentNode(Node):
         self._lock = threading.Lock()
         self.create_timer(0.25, self._anim_tick)
         self._results = []
-        
+
         # Launch the experiment loop in a separate thread to avoid blocking ROS callbacks.
         #TODO: uncomment 
         threading.Thread(target=self._run_all, daemon=True).start()
@@ -533,7 +539,7 @@ class WHCAExperimentNode(Node):
                     self.get_logger().info(
                         f"[{run_index}/{total_runs}] W={window_size} agents={agent_count} trial={trial+1}"
                     )
-                    results = self._run_single_trial(agent_count, window_size, trial, show=False)
+                    results = self._run_single_trial(agent_count, window_size, trial, show=(trial==0))
                     self._results.append(results)
                     if not results.get("skipped", False) and results["success_rate"] == 0.0:
                         zero_success.append((window_size, agent_count, trial))
@@ -556,7 +562,7 @@ class WHCAExperimentNode(Node):
     def _run_single_trial(self, agent_count, window_size, trial_index, show=False):
         seed = trial_index * 100_000 + agent_count
         rng = random.Random(seed)
-        grid, free_cells = generate_maze(32, 0.20, seed=seed)
+        grid, free_cells = self.trial_maps[trial_index]
         starts, goals = sample_agents(free_cells, agent_count, rng)
         
         # Fix bug where some trials had too few free cells to place all agents' starts and goals.
