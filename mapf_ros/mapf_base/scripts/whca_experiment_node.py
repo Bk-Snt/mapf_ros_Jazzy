@@ -238,11 +238,17 @@ def run_whca(start_positions, goal_positions, grid, window_size, max_turns=100):
         if all(arrived) or window_offset >= max_turns:
             break
 
+        """
+        # Closest to goal plans first
         priority_order = sorted(
             range(num_agents),
             key=lambda i: rra_stars[i].get_h(*current_positions[i]) if rra_stars[i] else 0,
-            reverse=False   # closest to goal plans first
+            reverse=False   
         )
+        """
+        
+        # Static order (agent 0, 1, 2, ...)
+        priority_order = list(range(num_agents))
     
 
         ordered_starts   = [current_positions[i] for i in priority_order]
