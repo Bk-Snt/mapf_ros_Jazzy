@@ -529,8 +529,6 @@ class WHCAExperimentNode(Node):
         # time.sleep(8.0)
         total_runs = len(self.window_sizes) * len(self.agent_counts) * self.n_trials
         run_index = 0
-        
-        zero_success = []
 
         for window_size in self.window_sizes:
             for agent_count in self.agent_counts:
@@ -541,23 +539,9 @@ class WHCAExperimentNode(Node):
                     )
                     results = self._run_single_trial(agent_count, window_size, trial, show=(trial==0))
                     self._results.append(results)
-                    if not results.get("skipped", False) and results["success_rate"] == 0.0:
-                        zero_success.append((window_size, agent_count, trial))
 
         self._save()
         self.get_logger().info(f"All done. Results → {self.output_csv}")
-        
-        self.get_logger().info("Trials with 0% success:")
-        for window_size, agent_count, trial in zero_success:
-            self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
-        
-        """
-        self.get_logger().info("Running trials with 0% success again with animation:")
-        for window_size, agent_count, trial in zero_success:
-            self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
-            self._run_single_trial(agent_count, window_size, trial, show=False)
-            time.sleep(10)
-        """
 
     def _run_single_trial(self, agent_count, window_size, trial_index, show=False):
         seed = trial_index * 100_000 + agent_count
