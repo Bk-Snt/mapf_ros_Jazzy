@@ -55,6 +55,66 @@ def manhattan_distance(x, y, gx, gy):
     return abs(x - gx) + abs(y - gy)
 
 
+class RRAstar:
+    """
+    Reverse Resumable A* heuristic — Silver (2005), Section 3.
+
+    Runs backward Dijkstra from the agent's goal through the static obstacle
+    map. When queried for h(x, y), the search resumes until (x, y) is expanded
+    and returns the true shortest-path distance, ignoring all other agents.
+
+    One instance per agent per planning window.
+    """
+
+    def __init__(self, goal_x: int, goal_y: int, grid: np.ndarray) -> None:
+        self.dimx, self.dimy = grid.shape
+        self.grid = grid
+        self._distances: dict = {}   # closed: (x, y) -> true dist to goal
+        self._in_open: dict = {}     # (x, y) -> best g seen in open set
+        self._counter: int = 0
+        self._open: list = []        # heap: (g, counter, x, y)
+
+        # Seed: the goal itself is distance 0
+        heapq.heappush(self._open, (0, 0, goal_x, goal_y))
+        self._in_open[(goal_x, goal_y)] = 0
+
+    def get_h(self, x: int, y: int) -> int:
+        """
+        Return true shortest-path distance from (x, y) to goal.
+        Resumes the backward search if (x, y) hasn't been expanded yet.
+        Returns 10,000 for unreachable cells.
+        """
+        if (x, y) in self._distances:
+            return self._distances[(x, y)]
+
+        while self._open:
+            g, _, px, py = heapq.heappop(self._open)
+
+            if (px, py) in self._distances:
+                continue                        # stale entry, skip
+
+            self._distances[(px, py)] = g       # close this node
+
+            if (px, py) == (x, y):
+                return g                        # found it
+
+            for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+                nx, ny = px + dx, py + dy
+                if not (0 <= nx < self.dimx and 0 <= ny < self.dimy):
+                    continue
+                if self.grid[nx, ny] == 1:      # static obstacle
+                    continue
+                if (nx, ny) in self._distances: # already closed
+                    continue
+                ng = g + 1
+                if ng < self._in_open.get((nx, ny), 10**9):
+                    self._in_open[(nx, ny)] = ng
+                    self._counter += 1
+                    heapq.heappush(self._open, (ng, self._counter, nx, ny))
+
+        return 10_000   # unreachable
+
+
 def reconstruct_path(came_from, current_state, start_state):
     """Reconstruct an A* path from the came_from dictionary."""
     path = [current_state]
@@ -65,16 +125,15 @@ def reconstruct_path(came_from, current_state, start_state):
     return path
 
 
-def windowed_a_star_search(start_state, goal_x, goal_y, window_size, grid, reservation_table):
+def windowed_a_star_search(start_state, goal_x, goal_y, window_size, grid, reservation_table, rra_star=None):
     """Perform A* search for a single agent inside the WHCA time window."""
     width, height = grid.shape
     heap_counter = 0
     open_heap = []
-    start_priority = start_state.t + manhattan_distance(start_state.x, start_state.y, goal_x, goal_y)
-    heapq.heappush(open_heap, (start_priority, heap_counter, start_state))
-
+    h0 = rra_star.get_h(start_state.x, start_state.y) if rra_star else manhattan_distance(start_state.x, start_state.y, goal_x, goal_y)
+    heapq.heappush(open_heap, (start_state.t + h0, heap_counter, start_state))
     came_from = {}
-    g_scores = {start_state: start_state.t}
+    g_scores = {start_state: 0}
 
     while open_heap:
         _, _, current_state = heapq.heappop(open_heap)
@@ -99,32 +158,33 @@ def windowed_a_star_search(start_state, goal_x, goal_y, window_size, grid, reser
                 continue
 
             neighbor_state = State(next_x, next_y, next_t)
-            if next_t < g_scores.get(neighbor_state, float("inf")):
+            at_goal_wait = (current_state.x == goal_x and current_state.y == goal_y
+                and dx == 0 and dy == 0
+                and current_state.t < window_size)
+            move_cost = 0 if at_goal_wait else 1
+            new_g = g_scores[current_state] + move_cost
+
+            if new_g < g_scores.get(neighbor_state, float("inf")):
                 came_from[neighbor_state] = current_state
-                g_scores[neighbor_state] = next_t
+                g_scores[neighbor_state] = new_g
                 heap_counter += 1
-                priority = next_t + manhattan_distance(next_x, next_y, goal_x, goal_y)
-                heapq.heappush(open_heap, (priority, heap_counter, neighbor_state))
+                h = rra_star.get_h(next_x, next_y) if rra_star else manhattan_distance(next_x, next_y, goal_x, goal_y)
+                heapq.heappush(open_heap, (new_g + h, heap_counter, neighbor_state))
 
     return None
 
 
-def plan_window(start_positions, goal_positions, grid, window_size, arrived_flags):
-    """Produce candidate paths for all agents inside a single WHCA window."""
+def plan_window(start_positions, goal_positions, grid, window_size, arrived_flags, rra_stars):
     num_agents = len(start_positions)
     reservation_table = ReservationTable()
-    start_set = set(start_positions)
-    reserved_goal_positions_per_agent = []
 
+    # Keep already-arrived agents parked on their goals for the whole window.
     for agent_index in range(num_agents):
+        if not arrived_flags[agent_index]:
+            continue
         goal_x, goal_y = goal_positions[agent_index]
-        reserved_goal_positions = set()
         for t in range(window_size + 1):
-            if t == 0 and (goal_x, goal_y) in start_set and not arrived_flags[agent_index]:
-                continue
             reservation_table.reserve_vertex(goal_x, goal_y, t)
-            reserved_goal_positions.add((goal_x, goal_y, t))
-        reserved_goal_positions_per_agent.append(reserved_goal_positions)
 
     paths = []
     for agent_index in range(num_agents):
@@ -135,16 +195,9 @@ def plan_window(start_positions, goal_positions, grid, window_size, arrived_flag
 
         agent_start = State(start_positions[agent_index][0], start_positions[agent_index][1], 0)
 
-        for reserved_vertex in reserved_goal_positions_per_agent[agent_index]:
-            reservation_table.vertex_reservations.discard(reserved_vertex)
-
-        started_on_reserved_vertex = (agent_start.x, agent_start.y, 0) in reservation_table.vertex_reservations
-        if started_on_reserved_vertex:
-            reservation_table.vertex_reservations.discard((agent_start.x, agent_start.y, 0))
-
-        path = windowed_a_star_search(agent_start, goal_x, goal_y, window_size, grid, reservation_table)
+        path = windowed_a_star_search(agent_start, goal_x, goal_y, window_size, grid, reservation_table, rra_stars[agent_index])
         if path is None:
-            return None
+            path = [State(agent_start.x, agent_start.y, 0)]
 
         for state in path:
             reservation_table.reserve_vertex(state.x, state.y, state.t)
@@ -157,11 +210,6 @@ def plan_window(start_positions, goal_positions, grid, window_size, arrived_flag
         final_state = path[-1]
         for t in range(final_state.t + 1, window_size + 1):
             reservation_table.reserve_vertex(final_state.x, final_state.y, t)
-
-        for reserved_vertex in reserved_goal_positions_per_agent[agent_index]:
-            reservation_table.vertex_reservations.add(reserved_vertex)
-        if started_on_reserved_vertex:
-            reservation_table.vertex_reservations.add((agent_start.x, agent_start.y, 0))
 
         paths.append(path)
 
@@ -178,39 +226,69 @@ def run_whca(start_positions, goal_positions, grid, window_size, max_turns=100):
     elapsed_windows = []
     window_offset = 0
     initial_planning_time = 0.0
+    step_size = max(1, window_size // 2)
 
-    for window_index in range((max_turns // window_size) + 3):
+    # CREATE ONCE — persists across all windows for this trial
+    rra_stars = [
+        RRAstar(gx, gy, grid) if not arrived[i] else None
+        for i, (gx, gy) in enumerate(goal_positions)
+    ]
+
+    for window_index in range((max_turns // step_size) + 3):
         if all(arrived) or window_offset >= max_turns:
             break
 
+        priority_order = sorted(
+            range(num_agents),
+            key=lambda i: rra_stars[i].get_h(*current_positions[i]) if rra_stars[i] else 0,
+            reverse=False   # closest to goal plans first
+        )
+    
+
+        ordered_starts   = [current_positions[i] for i in priority_order]
+        ordered_goals    = [goal_positions[i]    for i in priority_order]
+        ordered_arrived  = [arrived[i]           for i in priority_order]
+        ordered_rra_stars = [rra_stars[i]        for i in priority_order]  
+
         start_time = time.perf_counter()
-        window_paths = plan_window(current_positions, goal_positions, grid, window_size, arrived)
+        window_paths_ordered = plan_window(ordered_starts, ordered_goals, grid, window_size,ordered_arrived, ordered_rra_stars
+        )  
         elapsed = time.perf_counter() - start_time
         if window_index == 0:
             initial_planning_time = elapsed
         elapsed_windows.append(elapsed)
 
-        if window_paths is None:
-            break
+        # Map results back to original agent indices
+        window_paths = [None] * num_agents
+        for rank, original_i in enumerate(priority_order):
+            window_paths[original_i] = window_paths_ordered[rank]
 
         for agent_index in range(num_agents):
             if arrived[agent_index]:
                 continue
             for state in window_paths[agent_index][1:]:
+                if state.t > step_size:        # execute first W/2 steps
+                    break
                 if window_offset + state.t > max_turns:
                     break
                 trajectories[agent_index].append((state.x, state.y))
 
-        window_offset += window_size
+        window_offset += step_size         # ← advance by W/2
 
         for agent_index in range(num_agents):
             if arrived[agent_index]:
                 continue
-            last_state = window_paths[agent_index][-1]
-            current_positions[agent_index] = (last_state.x, last_state.y)
-            if (last_state.x, last_state.y) == goal_positions[agent_index]:
+            path = window_paths[agent_index]
+            last_executed = path[0]
+            for state in path[1:]:
+                if state.t <= step_size:
+                    last_executed = state
+                else:
+                    break
+            current_positions[agent_index] = (last_executed.x, last_executed.y)
+            if (last_executed.x, last_executed.y) == goal_positions[agent_index]:
                 arrived[agent_index] = True
-                arrival_times[agent_index] = window_offset - window_size + last_state.t
+                arrival_times[agent_index] = window_offset - step_size + last_executed.t
 
     for agent_index in range(num_agents):
         if not arrived[agent_index]:
@@ -225,6 +303,7 @@ def generate_maze(size=32, obs=0.20, seed=None):
     """Generate a random binary grid and keep its largest free region."""
     rng = random.Random(seed)
     
+    """
     grid = np.zeros((size, size), dtype=np.int8)
     for x in range(size):
         for y in range(size):
@@ -233,7 +312,8 @@ def generate_maze(size=32, obs=0.20, seed=None):
     
     free_cells = [(x, y) for x in range(size) for y in range(size) if grid[x, y] == 0]
     
-    # return grid, free_cells
+    return grid, free_cells
+    """
     
     while True:
         grid = np.zeros((size, size), dtype=np.int8)
@@ -275,7 +355,7 @@ def generate_maze(size=32, obs=0.20, seed=None):
                 grid[x, y] = 1
 
         if len(largest_region) >= 50:
-            return grid, list(largest_region)
+            return grid, sorted(largest_region)
 
 def sample_agents(free_cells, agent_count, rng):
     """Randomly sample start and goal positions for each agent."""
@@ -293,7 +373,7 @@ def metrics(arrival_times, trajectories, max_turns=100):
     """Compute experiment statistics from WHCA results."""
     agent_count = len(arrival_times)
     success_count = sum(1 for t in arrival_times if 0 <= t <= max_turns)
-    path_lengths = [t if 0 <= t <= max_turns else max_turns for t in arrival_times]
+    successful_path_lengths = [t for t in arrival_times if 0 <= t <= max_turns]
 
     cycle_counts = []
     for path in trajectories:
@@ -305,10 +385,15 @@ def metrics(arrival_times, trajectories, max_turns=100):
             visited.add(position)
         cycle_counts.append(cycles)
 
+    successful_cycles = [
+        c for c, t in zip(cycle_counts, arrival_times)
+        if 0 <= t <= max_turns
+    ]
+
     return {
         "success_rate": success_count / agent_count * 100,
-        "avg_path_len": float(np.mean(path_lengths)),
-        "avg_cycles": float(np.mean(cycle_counts)),
+        "avg_path_len": float(np.mean(successful_path_lengths)) if successful_path_lengths else 0.0,
+        "avg_cycles": float(np.mean(successful_cycles)) if successful_cycles else 0.0,
     }
 
 
@@ -364,7 +449,7 @@ class WHCAExperimentNode(Node):
         #TODO: uncomment 
         threading.Thread(target=self._run_all, daemon=True).start()
         #threading.Thread(target=self._debug, daemon=True).start()
-
+        
     # ── Animation ─────────────────────────────────────────────────────────────
 
     def _anim_tick(self):
@@ -420,8 +505,8 @@ class WHCAExperimentNode(Node):
     def _debug(self):
         """Run a single trial with animation for debugging purposes."""
         w=8
-        a=60
-        i=2
+        a=70
+        i=0
         self.get_logger().info(f"Running debug trial with W={w} agents={a}, trial={i}...")
         self._run_single_trial(agent_count=a, window_size=w, trial_index=i, show=True)
 
@@ -441,7 +526,7 @@ class WHCAExperimentNode(Node):
                     )
                     results = self._run_single_trial(agent_count, window_size, trial, show=False)
                     self._results.append(results)
-                    if results["success_rate"] == 0.0:
+                    if not results.get("skipped", False) and results["success_rate"] == 0.0:
                         zero_success.append((window_size, agent_count, trial))
 
         self._save()
@@ -451,20 +536,40 @@ class WHCAExperimentNode(Node):
         for window_size, agent_count, trial in zero_success:
             self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
         
+        """
         self.get_logger().info("Running trials with 0% success again with animation:")
         for window_size, agent_count, trial in zero_success:
             self.get_logger().info(f"  W={window_size} agents={agent_count} trial={trial+1}")
-            self._run_single_trial(agent_count, window_size, trial, show=True)
+            self._run_single_trial(agent_count, window_size, trial, show=False)
             time.sleep(10)
+        """
 
     def _run_single_trial(self, agent_count, window_size, trial_index, show=False):
         seed = trial_index * 100_000 + agent_count
         rng = random.Random(seed)
         grid, free_cells = generate_maze(32, 0.20, seed=seed)
         starts, goals = sample_agents(free_cells, agent_count, rng)
+        
+        # Fix bug where some trials had too few free cells to place all agents' starts and goals.
+        # FIXME this needs a proper solution — currently just skipping those trials and marking them in the results.
         if starts is None:
-            return
+            self.get_logger().info(
+                f"Skipping trial with W={window_size} agents={agent_count}, "
+                f"trial={trial_index}: not enough free cells for starts/goals."
+            )
+            return {
+                "window_size": window_size,
+                "n_agents": agent_count,
+                "trial": trial_index,
+                "success_rate": 0.0,
+                "avg_path_len": 0.0,
+                "avg_cycles": 0.0,
+                "init_ms": 0.0,
+                "max_turn_ms": 0.0,
+                "skipped": True,
+            }
 
+        self.get_logger().info(f"Running trial with W={window_size} agents={agent_count}, trial={trial_index}...")
         self._publish_map(grid)
         arrival_times, trajectories, initial_time, window_times = run_whca(
             starts, goals, grid, window_size, self.max_turns
@@ -485,6 +590,7 @@ class WHCAExperimentNode(Node):
             "avg_cycles": stats["avg_cycles"],
             "init_ms": initial_time * 1000,
             "max_turn_ms": (max(window_times) * 1000 if window_times else 0),
+            "skipped": False,
         }
 
         if show:
@@ -683,6 +789,7 @@ class WHCAExperimentNode(Node):
             "avg_cycles",
             "init_ms",
             "max_turn_ms",
+            "skipped",
         ]
         with open(self.output_csv, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fields)
@@ -704,10 +811,10 @@ class WHCAExperimentNode(Node):
             self.get_logger().info(
                 f"{window_size:>4}  "
                 f"{agent_count:>6}  "
-                f"{np.max([r['success_rate'] for r in group]):>8.1f}  "
-                f"{np.max([r['avg_path_len'] for r in group]):>7.1f}  "
-                f"{np.max([r['avg_cycles'] for r in group]):>6.2f}  "
-                f"{np.max([r['init_ms'] for r in group]):>8.2f}"
+                f"{np.mean([r['success_rate'] for r in group]):>8.1f}  "
+                f"{np.mean([r['avg_path_len'] for r in group]):>7.1f}  "
+                f"{np.mean([r['avg_cycles'] for r in group]):>6.2f}  "
+                f"{np.mean([r['init_ms'] for r in group]):>8.2f}"
             )
 
 
