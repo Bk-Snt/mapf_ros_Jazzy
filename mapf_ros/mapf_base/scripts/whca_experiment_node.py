@@ -249,7 +249,7 @@ def run_whca(start_positions, goal_positions, grid, window_size, max_turns=100):
         
         # Static order (agent 0, 1, 2, ...)
         priority_order = list(range(num_agents))
-    
+
 
         ordered_starts   = [current_positions[i] for i in priority_order]
         ordered_goals    = [goal_positions[i]    for i in priority_order]
@@ -365,12 +365,15 @@ def generate_maze(size=32, obs=0.20, seed=None):
 
 def sample_agents(free_cells, agent_count, rng):
     """Randomly sample start and goal positions for each agent."""
-    if len(free_cells) < 2 * agent_count:
+    if len(free_cells) < agent_count:
         return None, None
-    chosen = rng.sample(free_cells, 2 * agent_count)
-    starts = [tuple(position) for position in chosen[:agent_count]]
-    goals = [tuple(position) for position in chosen[agent_count:]]
-    return starts, goals
+    starts = rng.sample(free_cells, agent_count)
+    goals  = rng.sample(free_cells, agent_count)   # independent — may overlap with starts
+    # Optional: forbid only start_i == goal_i for the same agent (trivial trial)
+    for i in range(agent_count):
+        while goals[i] == starts[i]:
+            goals[i] = rng.choice(free_cells)
+    return [tuple(s) for s in starts], [tuple(g) for g in goals]
 
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
@@ -379,7 +382,7 @@ def metrics(arrival_times, trajectories, max_turns=100):
     """Compute experiment statistics from WHCA results."""
     agent_count = len(arrival_times)
     success_count = sum(1 for t in arrival_times if 0 <= t <= max_turns)
-    successful_path_lengths = [t for t in arrival_times if 0 <= t <= max_turns]
+    all_path_lengths = [t if 0 <= t <= max_turns else max_turns for t in arrival_times]
 
     cycle_counts = []
     for path in trajectories:
@@ -397,9 +400,9 @@ def metrics(arrival_times, trajectories, max_turns=100):
     ]
 
     return {
-        "success_rate": success_count / agent_count * 100,
-        "avg_path_len": float(np.mean(successful_path_lengths)) if successful_path_lengths else 0.0,
-        "avg_cycles": float(np.mean(successful_cycles)) if successful_cycles else 0.0,
+        "success_rate":   success_count / agent_count * 100,
+        "avg_path_len":   float(np.mean(all_path_lengths)),        
+        "avg_cycles":     float(np.mean(successful_cycles)) if successful_cycles else 0.0,
     }
 
 
